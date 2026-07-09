@@ -13,7 +13,7 @@ Current focus:
 
 Recent project:
 
-- [X Reply Janitor](https://github.com/bahuang081-svg/x-reply-janitor) - a local browser extension that hides spammy bot replies on X/Twitter without the X API, account tokens, telemetry, or remote moderation.
+- [X Reply Janitor](https://github.com/zoahdev/x-reply-janitor) - a local browser extension that hides spammy bot replies on X/Twitter without the X API, account tokens, telemetry, or remote moderation.
 
 Principles:
 
