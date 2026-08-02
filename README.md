@@ -33,6 +33,7 @@ shipping > theater
 | [llms-txt-forge](https://github.com/zoahdev/llms-txt-forge) | Generates clean `llms.txt` files for AI-readable open-source projects. | [v0.1.0](https://github.com/zoahdev/llms-txt-forge/releases/tag/v0.1.0) |
 | [repo-signal](https://github.com/zoahdev/repo-signal) | Scores repository readiness for humans, search engines, and AI assistants. | [v0.1.0](https://github.com/zoahdev/repo-signal/releases/tag/v0.1.0) |
 | [noise-score](https://github.com/zoahdev/noise-score) | Transparent local scoring for noisy social text and spam-like replies. | [v0.1.0](https://github.com/zoahdev/noise-score/releases/tag/v0.1.0) |
+| [Celestia Mocha Node Operator](https://github.com/zoahdev/celestia-mocha-node-operator) | Public, reproducible operations record for a Celestia Mocha data-availability light node. | [operator-v0.1.0](https://github.com/zoahdev/celestia-mocha-node-operator/releases/tag/operator-v0.1.0) |
 
 ## Build Signals
 
