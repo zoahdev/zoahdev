@@ -5,9 +5,10 @@ Early contributor to [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-
 | Project | What it does | Status |
 | --- | --- | --- |
 | [dsh-github-release-radar](https://github.com/zoahdev/dsh-github-release-radar) | Track releases and stars of any public GitHub repository from inside dsh agents — no API key needed. | [v0.1.0](https://github.com/zoahdev/dsh-github-release-radar) |
-| [dsh-github-intelligence](https://github.com/zoahdev/dsh-github-intelligence) | 140+ tools across 9 ecosystems integration for dsh: repo, releases, issues, PRs, contributors, search, and a deep repo report. | [v1.0.0](https://github.com/zoahdev/dsh-github-intelligence/releases/tag/v2.1.0) |
+| [dsh-github-intelligence](https://github.com/zoahdev/dsh-github-intelligence) | 140+ tools across 9 ecosystems integration for dsh: repo, releases, issues, PRs, contributors, search, and a deep repo report. | [v1.0.0](https://github.com/zoahdev/dsh-github-intelligence/releases/tag/v2.2.0) |
 | [dsh-tutorials](https://github.com/zoahdev/dsh-tutorials) · [site](https://zoahdev.github.io/dsh-tutorials/) | Bilingual tutorials: getting started, architecture deep dive, hands-on plugin tutorial. | published |
 | [dsh-plugin-template](https://github.com/zoahdev/dsh-plugin-template) | Minimal verified plugin template with CI smoke load (dsh 0.1.0-rc.6). | published |
+| [dsh-plugin-doctor](https://github.com/zoahdev/dsh-plugin-doctor) | Plugin health checks for dsh bundles: manifest, patch, build, pack, fresh-profile install (RFC #1629 `dsh plugin check`). | [v1.0.0](https://github.com/zoahdev/dsh-plugin-doctor/releases/tag/v1.0.0) |
 | [dsh-plugin-doctor](https://github.com/zoahdev/dsh-plugin-doctor) | Plugin health checks for dsh bundles: manifest, patch, build, pack, fresh-profile install (RFC #1629 `dsh plugin check`). | [v1.0.0](https://github.com/zoahdev/dsh-plugin-doctor/releases/tag/v1.0.0) |
 | [dsh-plugin-doctor](https://github.com/zoahdev/dsh-plugin-doctor) | Plugin health checks for dsh bundles: manifest, patch, build, pack, fresh-profile install (RFC #1629 `dsh plugin check`). | [v1.0.0](https://github.com/zoahdev/dsh-plugin-doctor/releases/tag/v1.0.0) |
 
