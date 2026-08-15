@@ -4,7 +4,7 @@ Early contributor to [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-
 
 | Project | What it does | Status |
 | --- | --- | --- |
-| [dsh-github-intelligence](https://github.com/zoahdev/dsh-github-intelligence) | 190+ read-only tools across 14 ecosystems (GitHub, GitLab, Gitee, npm, PyPI, crates.io, Docker, Hugging Face, HN, Stack Overflow, Reddit, dsh registry) with TTL caching. | [v2.5.0](https://github.com/zoahdev/dsh-github-intelligence/releases/tag/v2.5.0) |
+| [dsh-github-intelligence](https://github.com/zoahdev/dsh-github-intelligence) | 195+ read-only tools across 15 ecosystems (GitHub, GitLab, Gitee, npm, PyPI, crates.io, Docker, Hugging Face, HN, Stack Overflow, Reddit, dsh registry) with TTL caching. | [v2.6.0](https://github.com/zoahdev/dsh-github-intelligence/releases/tag/v2.6.0) |
 | [dsh-plugin-doctor](https://github.com/zoahdev/dsh-plugin-doctor) | Plugin health checks: manifest, patch, build, pack, fresh-profile install — CLI + agent-callable \plugin_check\ tool. | [v1.4.0](https://github.com/zoahdev/dsh-plugin-doctor/releases/tag/v1.4.0) |
 | [dsh-plugin-template](https://github.com/zoahdev/dsh-plugin-template) | Minimal verified plugin template with runtime peer guard and CI that really invokes the tool. | published |
 | [dsh-plugin-search](https://github.com/zoahdev/dsh-plugin-search) | Search npm + the awesome-dsh-plugin list from inside dsh agents. | [v1.1.0](https://github.com/zoahdev/dsh-plugin-search/releases/tag/v1.1.0) |
