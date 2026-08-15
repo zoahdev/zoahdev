@@ -11,6 +11,8 @@ Early contributor to [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-
 | [dsh-tutorials](https://github.com/zoahdev/dsh-tutorials) — [site](https://zoahdev.github.io/dsh-tutorials/) | Bilingual tutorials: getting started, architecture, plugin development, and contributor roadmap. | published |
 | [dsh-github-release-radar](https://github.com/zoahdev/dsh-github-release-radar) | Track releases and stars of any public GitHub repository from inside dsh agents — no API key needed. | [v0.1.0](https://github.com/zoahdev/dsh-github-release-radar/releases/tag/v0.1.0) |
 
+Ecosystem map (weekly): [dsh-ecosystem](https://github.com/zoahdev/dsh-ecosystem) — curated plugin catalog, bug radar, gap radar · [Week 1](https://github.com/deepseek-ai/deepseek-harness/discussions/1798)
+
 All four plugins pass real-registry agent-visibility checks (intelligence: 198 tools visible to an agent scope) — suite showcase: https://github.com/deepseek-ai/deepseek-harness/discussions/1790
 
 CI: [intelligence](https://github.com/zoahdev/dsh-github-intelligence/actions) · [doctor](https://github.com/zoahdev/dsh-plugin-doctor/actions) · [template](https://github.com/zoahdev/dsh-plugin-template/actions)
