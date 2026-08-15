@@ -11,6 +11,7 @@ Early contributor to [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-
 | [dsh-tutorials](https://github.com/zoahdev/dsh-tutorials) — [site](https://zoahdev.github.io/dsh-tutorials/) | Bilingual tutorials: getting started, architecture, plugin development, and contributor roadmap. | published |
 | [dsh-github-release-radar](https://github.com/zoahdev/dsh-github-release-radar) | Track releases and stars of any public GitHub repository from inside dsh agents — no API key needed. | [v0.2.0](https://github.com/zoahdev/dsh-github-release-radar/releases/tag/v0.2.0) |
 | [dsh-subscribe](https://github.com/zoahdev/dsh-subscribe) | Steam-style plugin marketplace: 536-plugin registry, in-DSH one-click install UI, zero-dep CLI, agent market tools. | [v0.3.0](https://github.com/zoahdev/dsh-subscribe/releases/tag/v0.3.0) |
+| [dsh-rule-evolve](https://github.com/zoahdev/dsh-rule-evolve) | Verification-driven self-evolution loop: failure logs become verified AGENTS.md rules; in-session plugin (evolve_learn / evolve_apply / evolve_touch) + tool-verify + rule lifecycle + local recall. | [v0.8.0](https://github.com/zoahdev/dsh-rule-evolve/releases/tag/v0.8.0) |
 
 Ecosystem map (weekly): [dsh-ecosystem](https://github.com/zoahdev/dsh-ecosystem) — curated plugin catalog, bug radar, gap radar · [Week 1](https://github.com/deepseek-ai/deepseek-harness/discussions/1798)
 
