@@ -15,6 +15,7 @@ Building the DeepSeek Harness plugin ecosystem's infrastructure layer — the pi
 | [dsh-sandbox-audit](https://github.com/zoahdev/dsh-sandbox-audit) | Static sandbox-policy consistency audit for presets (flags bare-fs tool escapes, read-open search, missing destructive-op gates). | published |
 | [dsh-compose-viz](https://github.com/zoahdev/dsh-compose-viz) | Visualize a preset's Cordis composition (groups, isolate realms, tool/service rows) as HTML. | published |
 | [dsh-trace](https://github.com/zoahdev/dsh-trace) | Aggregate observability dashboard: decode every session and render tokens/tools/errors/latency as one HTML report. | published |
+| [dsh-redact](https://github.com/zoahdev/dsh-redact) | Scrub secrets/PII from a session log before sharing it (API keys, tokens, private keys, emails, home paths). | published |
 | [dsh-rule-evolve](https://github.com/zoahdev/dsh-rule-evolve) | Verification-driven self-evolution loop: failure logs become verified AGENTS.md rules. | published |
 | [dsh-pet-evolve](https://github.com/zoahdev/dsh-pet-evolve) | A pet that grows with your agent (in-DSH companion). | published |
 | [dsh-ecosystem](https://github.com/zoahdev/dsh-ecosystem) | Ecosystem map, weekly report, release-compat automation, patch verification. | weekly |
