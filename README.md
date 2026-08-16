@@ -1,4 +1,16 @@
-<h1 align="center">Zoah</h1>  <p align="center">   <strong>AI-native tools for noisy systems.</strong><br>   Browser automation, local-first moderation, repo intelligence, and AI-readable open source. </p>  <p align="center">   <a href="https://github.com/zoahdev/x-reply-janitor">X Reply Janitor</a> |   <a href="https://github.com/zoahdev/llms-txt-forge">llms-txt-forge</a> |   <a href="https://github.com/zoahdev/repo-signal">repo-signal</a> |   <a href="https://github.com/zoahdev/noise-score">noise-score</a> </p>  ---  I build small tools that make hostile or messy interfaces usable.  The pattern is simple: keep the surface area small, make the defaults strong, avoid unnecessary cloud dependency, and document the project so both humans and AI systems can understand it quickly.  ```text signal   > noise local    > extractive clear    > clever shipping > theater ```  ## DeepSeek Harness
+<h1 align="center">Zoah</h1>  <p align="center">   <strong>AI-native tools for noisy systems.</strong><br>   Browser automation, local-first moderation, repo intelligence, and AI-readable open source. </p>  <p align="center">   <a href="https://github.com/zoahdev/x-reply-janitor">X Reply Janitor</a> |   <a href="https://github.com/zoahdev/llms-txt-forge">llms-txt-forge</a> |   <a href="https://github.com/zoahdev/repo-signal">repo-signal</a> |   <a href="https://github.com/zoahdev/noise-score">noise-score</a> </p>  ---  I build small tools that make hostile or messy interfaces usable.  The pattern is simple: keep the surface area small, make the defaults strong, avoid unnecessary cloud dependency, and document the project so both humans and AI systems can understand it quickly.  ```text signal   > noise local    > extractive clear    > clever shipping > theater ```  ## DeepSeek Harness · 中文总览
+
+我把 DeepSeek Harness 生态的「地基」做成了 20+ 个开源仓库，全部带中文说明：
+
+- **市场分发**：[dsh-subscribe](https://github.com/zoahdev/dsh-subscribe)（Steam 式市场）、dsh-plugin-search
+- **开发工具链**：[dsh-plugin-template](https://github.com/zoahdev/dsh-plugin-template)（模板）、[dsh-plugin-doctor](https://github.com/zoahdev/dsh-plugin-doctor)（自检）、dsh-rule-evolve（自我进化）
+- **安全**：[dsh-poison-guard](https://github.com/zoahdev/dsh-poison-guard)（投毒扫描）、dsh-redact（脱敏）、dsh-sandbox-audit（沙箱审计）
+- **内核可观测**：dsh-replay（回放）、dsh-trace（仪表盘）、dsh-shelf（会话）
+- **生态情报**：[dsh-ecosystem](https://github.com/zoahdev/dsh-ecosystem)（地图）、dsh-docs（官方文档提案）、dsh-tutorials（教程）
+
+完整中文导航（含关系图与新手路线）→ [dsh-ecosystem 中文总览](https://github.com/zoahdev/dsh-ecosystem#deepseek-harness-全家桶中文总览)
+
+## DeepSeek Harness
 
 Building the DeepSeek Harness plugin ecosystem's infrastructure layer — the pieces every plugin author and operator ends up needing.
 
