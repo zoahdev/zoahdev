@@ -11,6 +11,8 @@ Building the DeepSeek Harness plugin ecosystem's infrastructure layer — the pi
 | [dsh-subscribe](https://github.com/zoahdev/dsh-subscribe) | Steam-style plugin marketplace + 568-plugin registry, one-command sync, in-DSH install UI and agent tools. | published |
 | [dsh-plugin-doctor](https://github.com/zoahdev/dsh-plugin-doctor) | Plugin + profile health checks (manifest, patch, build, pack, install, boot, runtime deps, native modules) — the practical `dsh plugin check`. | v1.14.0 |
 | [dsh-shelf](https://github.com/zoahdev/dsh-shelf) | Session lifecycle CLI: list, stats, export (md/json/jsonl/zstd), archive, trash, search, rescue, web panel, DSH plugin. | published |
+| [dsh-replay](https://github.com/zoahdev/dsh-replay) | Time-travel debugger: decode session.jsonl.zstd and render the full trajectory (reasoning, tool calls, results) as HTML + diff. | published |
+| [dsh-sandbox-audit](https://github.com/zoahdev/dsh-sandbox-audit) | Static sandbox-policy consistency audit for presets (flags bare-fs tool escapes, read-open search, missing destructive-op gates). | published |
 | [dsh-rule-evolve](https://github.com/zoahdev/dsh-rule-evolve) | Verification-driven self-evolution loop: failure logs become verified AGENTS.md rules. | published |
 | [dsh-pet-evolve](https://github.com/zoahdev/dsh-pet-evolve) | A pet that grows with your agent (in-DSH companion). | published |
 | [dsh-ecosystem](https://github.com/zoahdev/dsh-ecosystem) | Ecosystem map, weekly report, release-compat automation, patch verification. | weekly |
