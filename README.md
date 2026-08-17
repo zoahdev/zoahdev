@@ -1,6 +1,6 @@
 # Zoah
 
-**DeepSeek Harness 生态基础设施 · AI-native tools for messy interfaces.**
+**DeepSeek Harness 生态基础设施 · Physical-AI 授权（KineGrant）· AI-native tools.**
 
 我在给 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（`dsh`）补社区最缺的「地基层」：插件市场、安全、可观测、自检、教程、上游修复——并全部开源成可安装、带中文说明的仓库。
 
@@ -37,6 +37,13 @@
 
 - **42 个上游补丁**：`deepseek-ai/deepseek-harness` 的 cherry-pick-ready 修复，每个带根因与回归测试 → [补丁账本](https://github.com/zoahdev/dsh-docs/blob/main/docs/specs/upstream-patches.md) · [RFC #2486](https://github.com/deepseek-ai/deepseek-harness/discussions/2486)
 - **官方采纳提案**：[#1814](https://github.com/deepseek-ai/deepseek-harness/discussions/1814) 建议把 dsh-plugin-doctor 采纳为官方 `dsh plugin check` + `dsh doctor`（对齐 #1629 / #1719）
+
+## KineGrant — 物理 AI 授权基础设施
+
+[KineGrant Protocol](https://github.com/zoahdev/kinegrant-protocol) — 面向物理 AI（机器人 / ROS2 / 硬件）的开放式授权与问责基础设施：短生命周期能力、本地动作门控、防重放、签名回执、后量子 ML-DSA-65、机群策略/吊销分发，以及零依赖离线浏览器验证器。
+
+- 官网：https://kinegrant.com
+- 仓库：https://github.com/zoahdev/kinegrant-protocol
 
 ## 其他项目
 
