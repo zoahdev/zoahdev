@@ -14,14 +14,14 @@
 
 Building the DeepSeek Harness plugin ecosystem's infrastructure layer — the pieces every plugin author and operator ends up needing.
 
-**Upstream fixes:** 21 cherry-pick-ready patches against `deepseek-ai/deepseek-harness@master` (`47f943859b`), each with a root-cause writeup and regression test, prepared while the official PR channel is closed. Tracked in [dsh-docs · upstream patch queue](https://github.com/zoahdev/dsh-docs/blob/main/docs/specs/upstream-patches.md).
+**Upstream fixes:** 42 cherry-pick-ready patches against `deepseek-ai/deepseek-harness@master`, each with a root-cause writeup and regression test, prepared while the official PR channel is closed. Tracked in [dsh-docs · upstream patch queue](https://github.com/zoahdev/dsh-docs/blob/main/docs/specs/upstream-patches.md).
 
-**In [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin):** dsh-subscribe · dsh-rule-evolve · dsh-pet-evolve · dsh-shelf.
+**In [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin):** dsh-subscribe · dsh-rule-evolve · dsh-pet-evolve · dsh-shelf · dsh-plugin-doctor · dsh-github-intelligence (+ dsh-poison-guard / dsh-artifacts pending the 1-day gate).
 
 | Project | What it does | Status |
 | --- | --- | --- |
 | [dsh-subscribe](https://github.com/zoahdev/dsh-subscribe) | Steam-style plugin marketplace + 568-plugin registry, one-command sync, in-DSH install UI and agent tools. | published |
-| [dsh-plugin-doctor](https://github.com/zoahdev/dsh-plugin-doctor) | Plugin + profile health checks (manifest, patch, build, pack, install, boot, runtime deps, native modules) — the practical `dsh plugin check`. | v1.14.0 |
+| [dsh-plugin-doctor](https://github.com/zoahdev/dsh-plugin-doctor) | Plugin + profile health checks (manifest, patch, build, pack, install, boot, runtime deps, native modules) — the practical `dsh plugin check`. | v1.16.0 |
 | [dsh-shelf](https://github.com/zoahdev/dsh-shelf) | Session lifecycle CLI: list, stats, export (md/json/jsonl/zstd), archive, trash, search, rescue, web panel, DSH plugin. | published |
 | [dsh-replay](https://github.com/zoahdev/dsh-replay) | Time-travel debugger: decode session.jsonl.zstd and render the full trajectory (reasoning, tool calls, results) as HTML + diff. | published |
 | [dsh-sandbox-audit](https://github.com/zoahdev/dsh-sandbox-audit) | Static sandbox-policy consistency audit for presets (flags bare-fs tool escapes, read-open search, missing destructive-op gates). | published |
@@ -35,7 +35,7 @@ Building the DeepSeek Harness plugin ecosystem's infrastructure layer — the pi
 | [dsh-docs](https://github.com/zoahdev/dsh-docs) | PR-ready docs: plugin publishing, troubleshooting, registry contract, env-explain, upstream patch queue. | maintained |
 | [dsh-tutorials](https://github.com/zoahdev/dsh-tutorials) ([site](https://zoahdev.github.io/dsh-tutorials/)) | Bilingual tutorials: getting started, architecture, plugin development, contributor roadmap. | published |
 | [dsh-plugin-template](https://github.com/zoahdev/dsh-plugin-template) | Verified plugin template with runtime peer guard and CI that really invokes the tool. | published |
-| [dsh-github-intelligence](https://github.com/zoahdev/dsh-github-intelligence) | 195+ read-only tools across 15 ecosystems with TTL caching. | published |
+| [dsh-github-intelligence](https://github.com/zoahdev/dsh-github-intelligence) | 196+ read-only tools across 16 ecosystems with TTL caching. | npm-published |
 | [dsh-plugin-search](https://github.com/zoahdev/dsh-plugin-search) | Search npm + awesome-dsh-plugin from inside dsh agents. | published |
 | [dsh-github-release-radar](https://github.com/zoahdev/dsh-github-release-radar) | Track releases and stars of public repos from inside dsh. | published |
 
