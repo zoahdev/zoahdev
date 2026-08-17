@@ -12,6 +12,8 @@
 - **8** 个项目入选 [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) · **10** 个进入 [awesome-deepseek-harness](https://github.com/0xsline/awesome-deepseek-harness)
 - 官方 RFC：#1814（`dsh plugin check` / `dsh doctor` 采纳）、#2486（上游补丁队列）
 
+📝 技术博客（证据优先的深度工程分析）：https://zoahdev.github.io/blog/
+
 ## 旗舰项目
 
 | 项目 | 一句话 | 入口 |
