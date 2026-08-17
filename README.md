@@ -6,10 +6,10 @@
 
 ## 数字速览
 
-- **47** 个公开仓库 · **20+** 个 DSH 生态项目
+- **54** 个公开仓库 · **20+** 个 DSH 生态项目 · 生态注册表 **908** 插件
 - **42** 个上游 cherry-pick-ready 补丁（每个带根因 + 回归测试）
-- **5** 个 npm 包
-- **8** 个项目被 [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) 官方精选 · **7** 个进入 [awesome-deepseek-harness](https://github.com/0xsline/awesome-deepseek-harness)
+- **7** 个 npm 包
+- **8** 个项目入选 [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) · **10** 个进入 [awesome-deepseek-harness](https://github.com/0xsline/awesome-deepseek-harness)
 - 官方 RFC：#1814（`dsh plugin check` / `dsh doctor` 采纳）、#2486（上游补丁队列）
 
 ## 旗舰项目
@@ -22,6 +22,8 @@
 | [dsh-subscribe](https://github.com/zoahdev/dsh-subscribe) | Steam 式插件市场，一条命令同步 | [npm](https://www.npmjs.com/package/dsh-subscribe) |
 | [dsh-artifacts](https://github.com/zoahdev/dsh-artifacts) | Markdown + JSON → 自包含 HTML（文档/卡片/仪表盘/画廊） | [demo](https://zoahdev.github.io/dsh-artifacts/) · [npm](https://www.npmjs.com/package/dsh-artifacts) |
 | [dsh-replay](https://github.com/zoahdev/dsh-replay) | 时间旅行调试器：解码 session 全轨迹并可视化 | [npm](https://www.npmjs.com/package/dsh-replay) |
+| [dsh-browser-use](https://github.com/zoahdev/dsh-browser-use) | Browser Use 驱动的网页自动化（109k★ 生态） | [npm](https://www.npmjs.com/package/dsh-browser-use) |
+| [dsh-zh](https://github.com/zoahdev/dsh-zh) | 中文思考系统提示词（兼容官方预设） | [npm](https://www.npmjs.com/package/dsh-zh) |
 
 ## DeepSeek Harness 全栈
 
