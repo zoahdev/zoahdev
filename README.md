@@ -30,6 +30,7 @@
 - **安全**：dsh-poison-guard、dsh-redact、dsh-sandbox-audit
 - **可观测**：dsh-replay、dsh-trace、dsh-shelf、dsh-compose-viz
 - **生态情报**：dsh-ecosystem、dsh-docs、dsh-tutorials、dsh-github-intelligence
+- **生态桥接（借力大项目）**：dsh-browser-use（Browser Use）、dsh-firecrawl（Firecrawl）
 
 完整中文导航（关系图 + 新手路线）→ [dsh-ecosystem 中文总览](https://github.com/zoahdev/dsh-ecosystem#deepseek-harness-全家桶中文总览)
 
