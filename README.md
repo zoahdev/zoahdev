@@ -6,7 +6,7 @@
 
 ## 数字速览
 
-- **56** 个公开仓库 · **28+** 个 DSH 生态项目 · 生态注册表 **916** 插件
+- **57** 个公开仓库 · **29+** 个 DSH 生态项目 · 生态注册表 **917** 插件
 - **42** 个上游 cherry-pick-ready 补丁（每个带根因 + 回归测试）
 - **15+** 个 npm 包
 - **8** 个项目入选 [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) · **10** 个进入 [awesome-deepseek-harness](https://github.com/0xsline/awesome-deepseek-harness)
@@ -41,6 +41,7 @@
 | [dsh-discussions-radar](https://github.com/zoahdev/dsh-discussions-radar) | 官方 Discussions 雷达 | [npm](https://www.npmjs.com/package/dsh-discussions-radar) |
 | [dsh-firstrun](https://github.com/zoahdev/dsh-firstrun) | 首次运行体检（工具链/API Key/工作区 + 下一步） | [npm](https://www.npmjs.com/package/dsh-firstrun) |
 | [dsh-disk-audit](https://github.com/zoahdev/dsh-disk-audit) | dsh 数据目录磁盘占用审计 | [npm](https://www.npmjs.com/package/dsh-disk-audit) |
+| [dsh-quality-score](https://github.com/zoahdev/dsh-quality-score) | 插件质量评分卡：0-100 + 六分项 + 修复建议，批量榜单 | [npm](https://www.npmjs.com/package/dsh-quality-score) |
 ## DeepSeek Harness 全栈
 
 - **市场分发**：dsh-subscribe、dsh-plugin-search、dsh-github-release-radar
