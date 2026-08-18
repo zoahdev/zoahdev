@@ -6,9 +6,9 @@
 
 ## 数字速览
 
-- **54** 个公开仓库 · **20+** 个 DSH 生态项目 · 生态注册表 **908** 插件
+- **56** 个公开仓库 · **28+** 个 DSH 生态项目 · 生态注册表 **916** 插件
 - **42** 个上游 cherry-pick-ready 补丁（每个带根因 + 回归测试）
-- **7** 个 npm 包
+- **15+** 个 npm 包
 - **8** 个项目入选 [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) · **10** 个进入 [awesome-deepseek-harness](https://github.com/0xsline/awesome-deepseek-harness)
 - 官方 RFC：#1814（`dsh plugin check` / `dsh doctor` 采纳）、#2486（上游补丁队列）
 
@@ -27,6 +27,20 @@
 | [dsh-browser-use](https://github.com/zoahdev/dsh-browser-use) | Browser Use 驱动的网页自动化（109k★ 生态） | [npm](https://www.npmjs.com/package/dsh-browser-use) |
 | [dsh-zh](https://github.com/zoahdev/dsh-zh) | 中文思考系统提示词（兼容官方预设） | [npm](https://www.npmjs.com/package/dsh-zh) |
 
+## 2026-08-18 · 8 个新验证插件（一天流水线）
+
+> 全部 npm 0.1.0 · CI 全绿 · fresh profile 安装验证 · 教程见 [zh-24-pipeline](https://github.com/zoahdev/dsh-tutorials/blob/main/zh-24-pipeline.md)
+
+| 插件 | 一句话 | npm |
+| --- | --- | --- |
+| [dsh-dep-audit](https://github.com/zoahdev/dsh-dep-audit) | 依赖供应链卫生审计（peer 可解析 / dist-tag 矛盾 / 过期 / 许可证 / 漂移） | [npm](https://www.npmjs.com/package/dsh-dep-audit) |
+| [dsh-llms-forge](https://github.com/zoahdev/dsh-llms-forge) | 从 package.json + README 生成 llms.txt | [npm](https://www.npmjs.com/package/dsh-llms-forge) |
+| [dsh-readme-forge](https://github.com/zoahdev/dsh-readme-forge) | 从 package.json + cordis.patch.yml 生成 README | [npm](https://www.npmjs.com/package/dsh-readme-forge) |
+| [dsh-cn-boot](https://github.com/zoahdev/dsh-cn-boot) | 国内网络引导：探测 + 镜像/代理推荐 | [npm](https://www.npmjs.com/package/dsh-cn-boot) |
+| [dsh-timesheet](https://github.com/zoahdev/dsh-timesheet) | 从会话日志做 turn 级时间跟踪 | [npm](https://www.npmjs.com/package/dsh-timesheet) |
+| [dsh-discussions-radar](https://github.com/zoahdev/dsh-discussions-radar) | 官方 Discussions 雷达 | [npm](https://www.npmjs.com/package/dsh-discussions-radar) |
+| [dsh-firstrun](https://github.com/zoahdev/dsh-firstrun) | 首次运行体检（工具链/API Key/工作区 + 下一步） | [npm](https://www.npmjs.com/package/dsh-firstrun) |
+| [dsh-disk-audit](https://github.com/zoahdev/dsh-disk-audit) | dsh 数据目录磁盘占用审计 | [npm](https://www.npmjs.com/package/dsh-disk-audit) |
 ## DeepSeek Harness 全栈
 
 - **市场分发**：dsh-subscribe、dsh-plugin-search、dsh-github-release-radar
