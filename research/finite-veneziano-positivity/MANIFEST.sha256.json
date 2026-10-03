@@ -1,0 +1,173 @@
+{
+  "algorithm": "SHA-256",
+  "version": "2",
+  "release": "v2-public-preprint-20261003",
+  "scope": "Every file in this lightweight repository package except this manifest. The omitted generated transcript is documented separately in RELEASE_METADATA.json.",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 5998,
+      "sha256": "863a3e0208675ad1699266340d40054224b4e2bb0e2342ef8bb6279f867be8e9"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 523,
+      "sha256": "7377dc7dcc7ecf70153216cc986ed102eb46562ea257871f44a4b01375dfc5f8"
+    },
+    {
+      "path": "RELEASE_METADATA.json",
+      "bytes": 6163,
+      "sha256": "5dda1472f849e29d61a70a4bbc62753a17ada39505edb763ae53110ebfd73e05"
+    },
+    {
+      "path": "arxiv_metadata_public.txt",
+      "bytes": 1732,
+      "sha256": "bb5c32918787631b065a16e5578d28cd5985b38c81edd6a4f9804a9d27af37bc"
+    },
+    {
+      "path": "arxiv_self_submission_zh.txt",
+      "bytes": 7649,
+      "sha256": "e86df2b6f115446a33f5754fdb5796aa89b730f0bf847db96198a2d62041fb87"
+    },
+    {
+      "path": "build_chinese_summary.py",
+      "bytes": 6381,
+      "sha256": "75ebcf1db6ffad8ebcb233ffe3a281145489e4c400b56b9c3d4cd8a86b7d81cf"
+    },
+    {
+      "path": "finite_veneziano_arxiv_source_v2_public.tar.gz",
+      "bytes": 74060,
+      "sha256": "2a1724154728e8c75b43afdf51fa1963c762f603d0e1acf1c32a0a5a33a7cb6a"
+    },
+    {
+      "path": "finite_veneziano_dimension_bounds.pdf",
+      "bytes": 302072,
+      "sha256": "d00fb7c153b061a299aa7daa783b266723be9b040d49b83aad46afe677929e66"
+    },
+    {
+      "path": "finite_veneziano_dimension_bounds.tex",
+      "bytes": 35745,
+      "sha256": "ed52bd2c37af5b7d84d781331fd402f0ca21f10c2d2474e5d0707122db0806d6"
+    },
+    {
+      "path": "finite_veneziano_summary_zh.pdf",
+      "bytes": 80058,
+      "sha256": "b9a4fd4e7565ed30cec58760b922c7427828f3b132158209ec914b07aa11cf97"
+    },
+    {
+      "path": "finite_veneziano_summary_zh.txt",
+      "bytes": 4313,
+      "sha256": "ac7d74ba54288826a6c2334f935f55f9df40789a7229d591f777f4e48059f396"
+    },
+    {
+      "path": "presentation_fonts/ChineseSummary-Regular.ttf",
+      "bytes": 179500,
+      "sha256": "a48d3b7e4d2e9440520bbde823cdc8752246af435fc5f0ecb9505deaed153d50"
+    },
+    {
+      "path": "presentation_fonts/LICENSE-Noto-CJK.txt",
+      "bytes": 15082,
+      "sha256": "8cbfa1748aa0978d815b0be6dfe9a1618a17aa92afa8085b01a2009ec354c10c"
+    },
+    {
+      "path": "presentation_fonts/README.txt",
+      "bytes": 602,
+      "sha256": "10f7e3a4154cf55c92a39caff9c07bad001ca7530438b713dad20c019ba2b16c"
+    },
+    {
+      "path": "research/certify_uniform_base.py",
+      "bytes": 4086,
+      "sha256": "97d6891ba63e05e11af79b03c3ab1582949dc904c4e5658ada09f227a3457e2a"
+    },
+    {
+      "path": "research/check_integer_dimension_corollary.py",
+      "bytes": 753,
+      "sha256": "fa7f2b8c8783774267371bbeaa42415d6fa5522f0d166f7be153a201789dd86a"
+    },
+    {
+      "path": "research/derive_level3.py",
+      "bytes": 674,
+      "sha256": "92b47f30354899598f27127406d54165dae0dbdc4afb7f11eb86c46c7e2dd553"
+    },
+    {
+      "path": "research/integer_dimension_corollary.json",
+      "bytes": 873,
+      "sha256": "b66b04a8018fcd826e7267b2ce238e7b3d7e77d8a78737b3bc284fb475490c80"
+    },
+    {
+      "path": "research/level3_certificate.json",
+      "bytes": 2022,
+      "sha256": "dacc20a91d426273747dfacc399de62433b9889f68903cf5ed7d47c8cd3d0c4a"
+    },
+    {
+      "path": "research/positive_exit_polynomial.txt",
+      "bytes": 4087,
+      "sha256": "24837ff102200332edc0108de63cd66139dda5443603f043d0e49edc4fa4be4b"
+    },
+    {
+      "path": "research/uniform_base_certificates.json",
+      "bytes": 142698,
+      "sha256": "5eec10decfa6a6cc0654bc508257ce3321b1235e8f5e98e55aeca680980d1cde"
+    },
+    {
+      "path": "research/uniform_gap_certificate.json",
+      "bytes": 20724,
+      "sha256": "c0c88783d1256c4b41bd56aac86cafd2da659fb4d70281c69c108f7d1a2ec0d3"
+    },
+    {
+      "path": "research/verify_level3_theorem.py",
+      "bytes": 3024,
+      "sha256": "5099dd517ac4eef87c5732bddab5ac862a4def065cf45e2cab06c506db5fffb6"
+    },
+    {
+      "path": "research/verify_uniform_gap.py",
+      "bytes": 3905,
+      "sha256": "ae2fdc0ec335bf5099949502133e793a41303ed5046d97439f8fddb5ce6e9093"
+    },
+    {
+      "path": "verification/boundary_check.json",
+      "bytes": 18094,
+      "sha256": "4f5cbd5563c7654382b13a7cb2a3bbdcc5f8a649f4595dfa27bab9f95f19c405"
+    },
+    {
+      "path": "verification/boundary_check.py",
+      "bytes": 2677,
+      "sha256": "33a2ab6de4889727b46dd946d67644b7cf608d24f3f95d68cd248badd0fece50"
+    },
+    {
+      "path": "verification/cold_check.json",
+      "bytes": 2963,
+      "sha256": "5063eead28142dd7c9d3ce73d46ce5e7116a81e20ef589b4ccbb65a3477b7403"
+    },
+    {
+      "path": "verification/cold_check.py",
+      "bytes": 3888,
+      "sha256": "e1bba34c0b48a0a8bed2a0b1e702ad3bbd9d57a7778601814adfc150f9ae985d"
+    },
+    {
+      "path": "verification/independent_check.json",
+      "bytes": 12267,
+      "sha256": "727ecbcf72fb455dea587cf468f2bd0c54ce4a6ff9b4fdff5b4547e7852bd00a"
+    },
+    {
+      "path": "verification/independent_check.py",
+      "bytes": 3542,
+      "sha256": "5ea4b721892bbcc419f50f2475182f777515c28a643f6e22b8c8f950e56a9ae7"
+    },
+    {
+      "path": "verification/independent_uniform_base.py",
+      "bytes": 5667,
+      "sha256": "ea678295f0cda79f90d66433eff72130cb2fbf04a37467143dea863b71b532d5"
+    },
+    {
+      "path": "verification/independent_uniform_check.json",
+      "bytes": 32095,
+      "sha256": "6bbd393c8deb7982fe12df610bb88cacc5539ac679ce5230739e5154b45e3266"
+    },
+    {
+      "path": "verification/independent_uniform_check.py",
+      "bytes": 5002,
+      "sha256": "9915424aad23885d794bf1c8b58abf89144fec769a79dc22f145434d79d5da89"
+    }
+  ]
+}

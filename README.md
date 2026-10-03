@@ -28,6 +28,13 @@ The trained predictor checkpoint is currently retained in a private company rele
 
 Public demos, software tests, and model-quality evaluations answer different questions. I keep those distinctions visible and welcome independent reproduction, including failed attempts.
 
+## Public research notes
+
+- [Finite Veneziano-product positivity](research/finite-veneziano-positivity/README.md): an AI-assisted preprint and exact verification package for a specific four-point, tree-level amplitude family
+- [World-model window certification](https://github.com/zoahdev/kineworld/blob/26b264b0057f4f2537fbc1a16125178eb1c92358/verification/releases/KW-WORLD-MODEL-AUDITS-2026-10/prequential/REPORT.md): a scoped technical report with explicit model-class assumptions and reproducible synthetic checks
+
+These are public research materials without external peer review. Their scope, prior work, and substantial AI assistance are disclosed in the linked reports.
+
 ## Earlier work
 
 My agent and security work includes [KineGrant Protocol](https://github.com/zoahdev/kinegrant-protocol), [Developer Intelligence](https://github.com/zoahdev/dsh-github-intelligence), [Agent Plugin Doctor](https://github.com/zoahdev/dsh-plugin-doctor), and [Agent Replay](https://github.com/zoahdev/dsh-replay).

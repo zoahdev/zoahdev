@@ -1,0 +1,23 @@
+arXiv metadata for author verification
+No arXiv submission or license acceptance is claimed.
+
+Title:
+Sharp all spin dimension bounds for finite Veneziano products: A uniform gap and exact positivity certificates
+
+Authors:
+Yicheng Pan
+
+Category suggestion:
+hep-th (subject to account eligibility and moderation)
+
+Comments:
+12 pages; AI-assisted preprint; exact certificates and verification code in ancillary files
+
+Abstract:
+We determine the tree-level four-point partial-wave positivity range of every finite, equidistant Veneziano product. For each integer $n\geq3$, positivity at all mass levels and all spins holds exactly for real dimensions $3<D\leq d_n$, where $d_n$ is the unique zero of the level-three scalar projection. The thresholds decrease strictly to ten and satisfy $d_n=10+72/(11n)+13032/(1331n^2)+O(n^{-3})$. The uniform step is a gap theorem at $D=51/5$: all central-factorial Veneziano residues are positive except one low-level scalar. An established Bessel and first-exit method reduces this statement to a fixed integer polynomial with 182 positive coefficients. It settles all products with $n\geq35$; exact rational certificates cover the finite base $3\leq n\leq34$. The result provides a proof of a published numerical observation. The amplitude family, threshold values, and general proof strategies are prior work; originality of the specific uniform certificate and application remains provisional. No higher-point, loop-unitary, local, or physical string completion is established.
+
+Journal reference: leave blank
+DOI: leave blank
+Report number: leave blank
+License: the human submitting author must read and choose
+Affiliation: provide only a true current affiliation; none is asserted by this file

@@ -1,0 +1,88 @@
+arXiv 自助投稿指南：有限 Veneziano 乘积预印本
+核对日期：2026-10-03
+
+先分清进度
+GitHub 上公开论文和复现材料，是公开预印本；不等于 arXiv 已收录，也不等于期刊同行评审。本文的范围是指定有限 Veneziano 乘积族的树级四点偏波正性，不能写成“完成弦论”。作者栏使用 Yicheng Pan；不填写并不存在的机构、ORCID、DOI 或审稿状态。
+
+一、准备好这三个文件
+1. finite_veneziano_dimension_bounds.pdf：自己阅读和核对的英文主稿，共12页
+2. finite_veneziano_arxiv_source_v2_public.tar.gz：真正上传 arXiv 的最新版 LaTeX 源码包，不要先解压再胡乱删文件
+3. arxiv_metadata_public.txt：可复制的标题、作者、摘要和 Comments
+中文摘要 finite_veneziano_summary_zh.pdf 用于理解和分享，不代替英文主稿。
+
+重要：源码是 LaTeX 的论文必须上传源码，不能只上传 LaTeX 导出的 PDF。不要使用旧版含“未公开”说明的历史源码包，也不要把整个 GitHub 仓库压缩上传。
+官方说明：https://info.arxiv.org/help/submit_tex.html
+
+二、登录或注册
+1. 打开 https://arxiv.org/user
+2. 已有账号就登录，不要为同一作者重复注册
+3. 没有账号，打开 https://arxiv.org/user/register ，按页面填写可收信邮箱、用户名和密码，完成页面验证和邮件验证
+4. 姓名使用与稿件一致的真实姓名。机构必须真实；如果确实没有机构归属，官方允许填 Independent。不要因为本指南提到该选项，就替自己编造身份
+5. 密码、验证码由你在官网输入，不要放进论文、仓库或公开截图
+注册说明：https://info.arxiv.org/help/registerhelp.html
+
+三、开始新稿，检查学科背书
+1. 登录后的用户页点击 START NEW SUBMISSION
+2. 本稿研究散射振幅，主分类建议 hep-th。这是内容判断，不保证管理员接受；不要为绕过背书换不相干分类。Cross-list 没有充分理由就留空
+3. 若系统提示需要 endorsement，先完成这个门槛。首次投稿或进入新类别可能需要背书，具体以你的账号页面为准
+4. 按提示领取背书邮件/链接，联系认识你、了解研究领域且有该分类资格的 arXiv 作者。把论文和具体范围发给对方，请其自行判断；不要群发、付钱买背书或冒认机构
+5. 背书只说明允许向该类别投稿，不表示对方证明论文正确，也不是同行评审
+官方流程：https://info.arxiv.org/help/endorsement.html
+
+四、阅读作者声明和许可证
+这一步必须由你本人根据事实决定，不能只为了过页面勾选。
+- 你应能对署名、内容、引文、第三方材料使用权和完整披露负责
+- AI 参与已在文内写明，包括研究、推导、代码和写作；自动复算不是人类专家审稿
+- 如果尚未读懂和核查完整论证，就先停在草稿，不能声明已经完成不存在的个人核查
+- 投稿会授予 arXiv 永久、不可撤销的分发许可；公布后的历史版本不会因为以后撤稿而消失
+- 本项目没有替你选择 CC BY 等额外再利用许可证。若只打算允许 arXiv 托管，可阅读页面提供的 arXiv non-exclusive license to distribute，再由自己决定是否接受；这也不是可随时撤销的许可
+- 暂无期刊接受、DOI 或机构报告号，就保持对应字段为空
+协议：https://info.arxiv.org/help/policies/submission_agreement.html
+许可证说明：https://info.arxiv.org/help/license/index.html
+
+五、上传并编译
+1. 到 Prepare Files 页面，点击 Choose File，选择 finite_veneziano_arxiv_source_v2_public.tar.gz
+2. 点击 Upload。上传完先检查文件列表；不要把主要 .tex 或所需 anc/ 附件误删
+3. 点击 Check Files
+4. 主文件选择 finite_veneziano_dimension_bounds.tex，处理器通常为 PDFLaTeX；按系统检测结果检查
+5. 检查系统建议移除的文件，再点击 Accept and Continue；出现确认删除的窗口时，只确认确实不需要的构建缓存等文件
+6. 编译成功后点击 Preview PDF，逐页检查。至少确认标题、作者、12页正文、公式、表格、引用和AI披露齐全，公式没有方框或乱码
+7. 如失败，读取编译日志中第一个真正错误。缺文件就补正确文件；不要凭空删公式让编译通过。可以把不含账号信息的错误日志交给助手排查
+8. 本地编译成功不保证 arXiv 编译完全一样，以它生成的 PDF 为准
+官方页面按钮与流程：https://info.arxiv.org/help/submit/index.html
+
+六、填写元数据
+请从 arxiv_metadata_public.txt 复制，别从 PDF 复制数学字符。
+Title：Sharp all spin dimension bounds for finite Veneziano products: A uniform gap and exact positivity certificates
+Authors：Yicheng Pan
+Abstract：复制元数据文件完整摘要，保留其中 $...$ 的 TeX 数学
+Comments：12 pages; AI-assisted preprint; exact certificates and verification code in ancillary files
+Category：hep-th，前提是你的账号获准且内容分类仍合适
+Journal reference、DOI、Report number：目前均留空
+
+arXiv 元数据对字符有限制，数学用其支持的 TeX 写法，姓名栏用稿件的英文拼写；不要粘入弯引号、特殊长横线或中文作者注释。页面若有其他作者声明，只能按真实情况填写。
+字段说明：https://info.arxiv.org/help/prep.html
+
+七、最后检查并提交
+1. 对照稿件检查网页标题、作者和摘要，确认源码和网页信息一致
+2. 再次打开系统生成的 PDF，确认上传的是本次版本
+3. 确認所有声明真实、自己接受协议和所选许可后，再点击最终 Submit Article
+4. 保存系统提供的提交记录或确认邮件。处于 draft/incomplete、待处理或等待背书都不算公开收录
+5. 管理员可能要求修改、重新分类、暂缓或拒绝，不能把“点了提交”说成“arXiv 已发表”
+6. 只有公开摘要页和正式编号实际出现后，才把它写到 GitHub 和引用信息中
+7. 发现错误，按系统允许的撤回待公布提交或 replacement 流程修订；不要新建重复稿绕过版本记录
+公布说明：https://info.arxiv.org/help/availability.html
+第三方/代理规则：https://info.arxiv.org/help/third_party_submission.html
+
+世界模型这份怎么处理
+已经有公开的、可复现的技术报告，含固定有限可实现模型族与 prequential 连续类扩展的区别、精确反例、代码和完整结果。它没有证明神经世界模型突破或真实策略性能提升，也没有建立广泛原创性。
+当前建议把 GitHub 技术报告作为公开成果保留。若要进一步投 arXiv/期刊，应先整理成自包含论文、明确增量贡献并做针对性文献和专业审读。不要把原始 Markdown 报告当作已经准备好的 arXiv 源码包上传，更不要借用弦论稿的 hep-th 分类。
+公开报告：https://github.com/zoahdev/kineworld/blob/26b264b0057f4f2537fbc1a16125178eb1c92358/verification/releases/KW-WORLD-MODEL-AUDITS-2026-10/prequential/REPORT.md
+
+遇到卡点
+- 登录、密码、双重验证：在官网自己完成，不公开凭据
+- 背书：按账号给出的专属流程处理；没有背书不能假装完成
+- 许可或作者责任拿不准：停在草稿，不勾不真实的声明
+- 编译失败：发无隐私的编译错误和文件名求助
+- 被要求修改或拒收：逐条回应实际意见，不重复投相同内容碰运气
+- 本指南按上述日期官方文档整理；若当前页面顺序变了，按页面和官方帮助核对，不盲点同名按钮
