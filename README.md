@@ -30,6 +30,7 @@ Public demos, software tests, and model-quality evaluations answer different que
 
 ## Public research notes
 
+- [Erdős 883 all-n odd-cycle proof candidate](research/erdos883-all-n/README.md): an unrefereed, AI-assisted manuscript with exact finite certificates and reproducible verification code
 - [Finite Veneziano-product positivity](research/finite-veneziano-positivity/README.md): an AI-assisted preprint and exact verification package for a specific four-point, tree-level amplitude family
 - [World-model window certification](https://github.com/zoahdev/kineworld/blob/26b264b0057f4f2537fbc1a16125178eb1c92358/verification/releases/KW-WORLD-MODEL-AUDITS-2026-10/prequential/REPORT.md): a scoped technical report with explicit model-class assumptions and reproducible synthetic checks
 

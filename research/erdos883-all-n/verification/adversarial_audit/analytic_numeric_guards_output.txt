@@ -1,0 +1,1 @@
+PASS: exact rational analytic guards; floor identities independently checked for n=6..9999, and algebraically by six residue classes in the audit.

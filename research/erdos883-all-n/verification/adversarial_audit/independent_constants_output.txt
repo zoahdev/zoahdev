@@ -1,0 +1,5 @@
+Independent PASS: delta < 0.02331133608553561 ; C6 < 10.791641560572224
+Independent PASS: 2000 high cells, minimum slack 0.02924149178577378
+Independent PASS: 3820 low cells, minimum slack 0.02395561826217717
+Independent PASS: tail factors s=6..510, minimum 396/437
+CPU 0.6507072030000001

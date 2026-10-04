@@ -1,0 +1,12 @@
+C1 upper bound: 0.23392658263950905
+Tail first moment upper bound: 0.023456772181317326  < .0235
+C6 upper bound: 10.994755089900542  < 11
+All 1000 guarded high-branch cells pass; minimum slack: 0.02905399178577378
+All 1910 low-rank beta cells pass; minimum slack: 0.02389295162749755
+Uniform CDF error for every n >= 10^6: 0.02068085106382979
+Uniform CDF error for every n >= 2*10^6: 0.010555851063829787
+G_n(t) < .9*t - 1/6 - .0083 for n >= 10^6 and 1/3 <= t <= 3/4
+G_n(sqrt((beta+.03)/3)) < beta/3 - .0132 for n >= 2*10^6 and .1 <= beta <= 2.01
+Here G_n(t)=(2/n)*#{odd v<=n: phi(v)/v<t}
+No finite-n or all-n graph assertion is made
+CPU seconds: 0.338319942

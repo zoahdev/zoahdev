@@ -1,0 +1,624 @@
+Erdős 883 exact all n proof candidate
+Version 3 4 October 2026 UTC
+
+Abstract
+We give a proof candidate for the first question of Erdős 883 for every
+finite n. The proof uses odd totient-profile smoothing, small-prime
+signature ordering and an ordered-Hall construction. An explicit analytic
+argument handles n>=2,000,000. Exact interval certificates cover every
+smaller n, for every permitted subset A. No regularity lemma or unspecified
+starting threshold remains in the proposed argument.
+
+Theorem
+For every integer n>=0 and every A subset {1,...,n} satisfying
+ |A|>floor(n/2)+floor(n/3)-floor(n/6),
+the graph on A with distinct vertices u,v adjacent exactly when gcd(u,v)=1
+contains a simple cycle of every odd length L with 3<=L<=n/3+1.
+Equivalently, it contains C_(2ell+1) for every integer 1<=ell<=floor(n/6).
+
+Status and attribution
+This is an AI-assisted proof candidate whose mathematical arguments and
+exact certificates have received independent AI-assisted adversarial
+checks. It has not received external peer review or Lean/formal verification.
+No first-solution, novelty or priority claim is made.
+The proof explicitly adapts Donald Della Pietra's earlier missing-even
+smoothing, totient profiles, prime signatures and ordered-Hall method.
+His pinned 27 July 2026 manuscript states a sufficiently-large-n theorem.
+The claimed addition here is the exact finite completion and explicit
+threshold. The separate complete-tripartite question is not a new claim.
+
+Organization
+Part I proves an exact interval criterion covering all subsets A.
+Part II provides adaptive arithmetic bounds and a profile-only certificate.
+Part III proves the exact finite-prefix totient estimates.
+Part IV proves the theorem for every n>=2,000,000.
+Part V documents the complete exact finite bridge.
+Section numbers mentioned within a part are local to that part.
+All decimal constants in proof inequalities denote exact terminating
+rationals. The two decimal expansions of rational error bounds in Part III
+are explicitly diagnostic approximations; their exact rational bounds are
+authoritative. Displayed decimal approximations in checker output are diagnostic;
+no floating-point comparison determines a certificate pass.
+
+The only external theorem
+Ahlswede–Khachatrian (1996), Theorem 2(i), specialized to odd integers,
+bounds an intersecting odd family by floor(n/3)-floor(n/6). We use it only
+for n>=6 and a retained set of at least two odd vertices. If that set
+contains 1, it already has a coprime pair; otherwise absence of a coprime
+pair makes it intersecting under their convention even when equal pairs
+are included. This avoids any singleton-1 convention at small n.
+Primary paper: https://matwbn.icm.edu.pl/ksiazki/aa/aa74/aa7424.pdf
+Theorem 2(i) is on printed page 149.
+
+PART I Exact finite interval criterion
+============================================================
+
+Notation and external input
+Let f(n)=floor(n/2)+floor(n/3)-floor(n/6), m(n)=floor(n/6), H(n)=ceil(n/2), and M(n)=floor(n/3)-floor(n/6)+1. Let O_U be the odd integers in [U], in any fixed total order (the implementation uses decreasing phi(v)/v, breaking ties by increasing v). Write P_k for its first k members.
+
+The sole non-elementary arithmetic input is Ahlswede–Khachatrian (1996), Theorem 2, specialized to s=2: a set of pairwise noncoprime odd integers in [n] has size at most floor(n/3)-floor(n/6). Thus any M(n) distinct odds contain two coprime elements.
+Primary source:
+https://matwbn.icm.edu.pl/ksiazki/aa/aa74/aa7424.pdf
+Bibliographic identity: Sets of integers and quasi-integers with pairwise common divisor, Acta Arithmetica 74 (1996), 141–153, DOI 10.4064/aa-74-2-141-153.
+
+Choose any ordered finite list of odd primes p_1,...,p_t. The s-signature of v is (1_{p_i|v})_{1<=i<=s}. Set h_0=0 and h_s=2^s+1 for s>=1.
+For integers 6<=L<=U, define:
+ e_s(k;L,U) = min over distinct u,v in P_k with equal s-signature of #{even w<=L:gcd(w,u)=gcd(w,v)=1};
+ r_s(k;L,U) = the same minimum with all positive w<=L.
+If there is no such pair, set the corresponding minimum to +infinity. Finite sentinels exceeding every tested threshold may be used; the implementation uses floor(U/2)+1 and U+1.
+
+Exact interval criterion
+Suppose for every integer
+ 0<=b<=H(U)-M(U), 1<=j<=m(U),
+there exist an s in {0,...,t} and k in {0,...,H(U)} such that
+ 2 max(0,H(U)-k-b)+h_s < j,                     (1)
+and at least one of
+ e_s(k;L,U)>=b+j,                               (2E)
+ r_s(k;L,U)>=U-f(U)+m(U)+j.                     (2R)
+Then for every integer n in [L,U] and every A subset [n] with |A|>f(n), G(A) contains every odd cycle C_(2ell+1), 1<=ell<=floor(n/6).
+
+Proof
+Fix such n,A and put b=#(even integers in [n] outside A). There are at least M(n)+b selected odds. Retain the first M(n) of these in the fixed O_U order, calling the resulting set Y0. For every k,
+ |Y0 outside P_k| <= max(0,H(U)-k-b).             (3)
+Indeed, if a retained odd lies after position k, every discarded selected odd lies after k as well; there are at least b discarded odds. Counting inside O_U proves (3). If no retained odd lies after k the assertion is immediate.
+
+By the stated Ahlswede–Khachatrian theorem, choose coprime distinct a,a' in Y0. Since M(n)>=m(n)+1, for each ell<=m(n) choose a skeleton of ell+1 members of Y0 containing a,a'. Sort this skeleton lexicographically by its full t-signatures. Move a to the first position and a' to the last, without changing the relative order of the other vertices. Denote the result o_0=a,...,o_ell=a'.
+
+This one order has, simultaneously for every s>=1, at most h_s gaps joining different s-signatures: before endpoint moves, every prefix-signature occupies one block and there are at most 2^s-1 transitions; deleting a vertex cannot increase the number of transitions (the 0/1 inequality metric obeys the triangle inequality), and inserting each prescribed endpoint at an end increases it by at most one. For s=0 there are no transitions. At most twice the number in (3) of the gaps touch an odd outside P_k.
+
+Let R=A minus the skeleton and let D_i={w in R:gcd(w,o_{i-1})=gcd(w,o_i)=1}. For each rank j<=ell take s,k from the criterion. Every gap except at most 2max(0,H(U)-k-b)+h_s has both endpoints in P_k and equal s-signature.
+If (2E) holds, that gap has at least b+j common even neighbors in [L]. At most b are missing from A, and no even vertex is in the odd skeleton, so |D_i|>=j.
+If (2R) holds, it has at least U-f(U)+m(U)+j common neighbors in [L]. Removing vertices outside A and in the skeleton costs at most
+ (n-|A|)+(ell+1) <= n-f(n)+ell <= U-f(U)+m(U),
+so again |D_i|>=j. The last inequality follows from monotonicity of n-f(n)+m(n); writing n=6q+r, it equals 3q+(0,1,1,1,1,2)_r.
+Also b<=H(n)-M(n)<=H(U)-M(U), since H(n)-M(n)=2q+(-1,0,0,0,0,1)_r is nondecreasing.
+
+Consequently fewer than j lists D_i have size less than j. Sort the ell lists by increasing cardinality. The jth list has size at least j, so greedy selection supplies distinct representatives w_i. They all lie outside the skeleton. Hence
+ o_0,w_1,o_1,...,w_ell,o_ell,o_0
+is a simple coprime cycle of length 2ell+1, closing via gcd(a,a')=1. Different ranks may use different s,k or (2E)/(2R), because each bounds the same actual resource lists D_i. This proves the criterion.
+
+Why the implementation checks only one k for each s,b,j
+If h_s>=j there is no feasible k. Otherwise the smallest feasible k is
+ k=H(U)-b-floor((j-h_s-1)/2).
+Both common-neighbor minima are nonincreasing in k, so this k is optimal for satisfying (2E)/(2R). In the ranges tested k>=2. All sorting uses exact rational phi(v)/v; all common-neighbor counts use exact integer gcd and bitsets; there is no floating-point arithmetic in the certificate conditions.
+
+PART II Adaptive arithmetic and efficient certificates
+============================================================
+
+Notation
+rho(v)=phi(v)/v. Throughout this part, endpoint pairs u,v are odd integers.
+The first s odd primes are p_1=3,...,p_s; p=p_(s+1).
+For s=0, set p_0=2. The 0-signature is empty, p=p_1=3, and the tail
+primes r>p_0 are exactly the odd primes; all endpoint pairs remain odd.
+Let U be an integer upper bound on every skeleton vertex and let L<=U.
+Let H=ceil(U/2), q_L=floor(L/2), m=floor(U/6),
+f=floor(U/2)+floor(U/3)-floor(U/6), M=f-floor(U/2)+1.
+For 0<z<=1 define the strict finite profile count
+ R_U(z)=#{odd v<=U:rho(v)<z}.
+Strict inequality ensures that every remaining vertex has profile >=z.
+Write h_0=0 and h_s=2^s+1 for s>=1.
+
+1. Exact adaptive tail factor
+Let a be the greatest nonnegative integer with p^a<=U and put
+ eta_s(U)=((p-1)/p)^a.
+Every v<=U has at most a distinct prime divisors exceeding p_s. Each
+corresponding totient factor is at least (p-1)/p. Therefore
+ product_{r|v, r>p_s prime}(1-1/r) >= eta_s(U).
+All ingredients are integers or rational numbers; logarithms are unnecessary
+for computing a.
+
+If odd integers u,v<=U share their first s prime-divisibility signatures, every prime
+factor of v absent from u exceeds p_s. Hence
+ rho(lcm(u,v))
+  =rho(u) product_{r|v, r not dividing u}(1-1/r)
+  >=rho(u) eta_s(U).
+Interchanging u,v proves the slightly stronger bound
+ rho(lcm(u,v))>=max(rho(u),rho(v)) eta_s(U).
+In particular it is >=z eta_s(U) when both profiles are >=z.
+
+One may sharpen eta_s(U) without changing the proof. Let r be maximal such
+that the product of the first r primes after p_s is <=U. No integer <=U
+has more than r distinct tail prime factors. Among any r such primes the
+smallest r give the smallest totient-factor product. Thus their factor
+product is a valid sharper rational eta_s(U).
+
+2. Exact common-neighbor discrepancy
+For odd squarefree D with w=omega(D)>=1 and integer X>=0,
+ C_D(X)=#{1<=a<=X:gcd(a,D)=1}
+       =sum_{d|D} mu(d) floor(X/d).
+Comparing with X phi(D)/D, only the positive-mu terms can contribute
+negatively. There are 2^(w-1) such divisors, and d=1 has zero fractional
+part. Thus
+ C_D(X)>=X rho(D)-(2^(w-1)-1).
+For D=1 the equality C_1(X)=X holds.
+
+Define W(U) as the greatest w such that the product of the first w odd
+primes is <=U^2, and Delta(U)=2^(W(U)-1)-1 (take zero if W(U)=0).
+For D=rad(uv), D<=uv<=U^2, so the previous inequality gives
+ common even neighbors in [L] >= q_L rho(D)-Delta(U),
+ common whole-pool neighbors in [L] >= L rho(D)-Delta(U).
+This does not require D to divide L and remains valid if an endpoint is 1.
+
+3. Exact finite criterion using only a univariate profile
+For every required pair 0<=b<=H-M and 1<=j<=m, suppose one can choose a
+signature prefix s and rational z with
+ 2 max(0,R_U(z)-b)+h_s<j,                               (A)
+and either
+ q_L z eta_s(U)-Delta(U)>=b+j,                         (B_E)
+or
+ L z eta_s(U)-Delta(U)>=U-f+m+j.                       (B_R)
+Then the all-subsets conclusion of the finite interval criterion holds for
+every n in [L,U].
+
+Proof: retain the best M(n) selected odds as before. Among the R_U(z) low
+profile odds, at most max(0,R_U(z)-b) can remain in that retained set,
+because at least b selected odds worse than any retained low-profile odd
+were discarded. Order the skeleton by a single sufficiently long prime
+signature and move its coprime endpoints to the ends. For any selected
+prefix s, all but the number in (A) of its gaps have equal signatures and
+both endpoint profiles >=z. Sections 1 and 2 give at least j resources
+for each such gap. The ordered-Hall proof applies unchanged.
+
+Different ranks may select different prefix lengths. A single ordering by
+the longest selected prefix has all shorter prefixes contiguous before
+moving endpoints, so there is no consistency problem.
+
+4. One fully uniform tail bound with only O(sqrt U) transitions
+For every integer U>1024 choose the least s with U<=4^s. Thus s>=6 and
+2^s<2 sqrt U (or the weaker <= suffices).
+A valid tail factor for every v<=U is at least 9/10. Consequently
+ h_s<=2 sqrt U+1,
+ rho(lcm(u,v))>=(9/10) max(rho(u),rho(v))
+whenever the two signatures agree.
+
+Proof for s>=511: the next odd prime p>=2s+3>1024. If a is the number
+of distinct tail primes in v, then p^a<=U<=4^s, giving
+ a/p <= s log4/(p log p)
+      < log2/log(2s+3) <1/10.
+Bernoulli's inequality gives (1-1/p)^a>=1-a/p>9/10.
+For 6<=s<=510, exact rational arithmetic checks the sharper tail factor
+from Section 1 with upper bound 4^s. Every case is >=9/10. The smallest
+factor is 396/437 at s=6, from the two tail primes 19 and 23. This finite
+parameter calculation is included in verify_adaptive_tail_lemma.py; it
+is not enumeration over n or over subsets A. The standalone verifier reported about 0.04 CPU seconds.
+
+A useful uniform discrepancy bound is also elementary. For odd squarefree D,
+ (2^omega(D))^4/D=product_{p|D}(16/p)
+ <=16^5/(3*5*7*11*13)<81,
+since factors from primes >=17 are <=1. Hence 2^omega(D)<3 D^(1/4).
+For D<=U^2, the actual discrepancy from Section 2 is strictly less than
+(3/2)sqrt U. Thus (B_E)/(B_R) may use loss (3/2)sqrt U and factor 9/10,
+without computing W(U).
+
+This proves a universal numerical reduction for all U>1024:
+ 2 max(0,R_U(z)-b)+2^s+1<j,
+and either
+ (9/10)q_L z-(3/2)sqrt U>=b+j,
+or
+ (9/10)L z-(3/2)sqrt U>=U-f+m+j
+are sufficient. The exact integer 2^s+1 is preferable to its displayed
+2 sqrt U+1 upper bound. Irrational square roots may be rounded upward
+in the subtracted error if a rational-only certificate is desired.
+
+7. Stronger density bound and independent audit of the fast finite test
+Always
+ rho(lcm(u,v))=rho(u)rho(v)/rho(gcd(u,v))>=rho(u)rho(v).
+Consequently, for both profiles >=z and equal s-signatures, the valid lower
+bound is
+ g_s(z)=max(z^2,eta_s(U)z).
+This may replace z eta_s(U) everywhere in Section 3, and substantially
+improves shorter prefixes. In particular, the z^2 term needs no signatures
+at all and can be used at s=0, where h_0=0.
+
+For each odd v<=U define integer lower-degree functions
+ d_E(v)=floor(q_L g_s(rho(v)))-Delta(U),
+ d_R(v)=floor(L g_s(rho(v)))-Delta(U).
+Both are nondecreasing functions of rho(v). If two endpoints each have
+d_E(v)>=K and share their s-signatures, their actual common-even-neighbor
+count is >=K. The analogous assertion holds for d_R. Thus define
+ R_E(K)=#{odd v<=U:d_E(v)<K},
+ R_R(K)=#{odd v<=U:d_R(v)<K}.
+For fixed s,j with h_s<j, put a=floor((j-h_s-1)/2), D=U-f+m.
+The needed certificate for a given b is exactly the sufficient disjunction
+ R_E(b+j)<=b+a OR R_R(D+j)<=b+a.
+The whole-resource alternative covers all b>=R_R(D+j)-a. For smaller b,
+put z=b+j and Z(z)=R_E(z)-z. Checking all b reduces to
+ max_{j<=z<=min(j+bmax,j+R_R(D+j)-a-1)} Z(z)<=a-j,
+with an empty range automatically passing.
+
+Both range endpoints are nondecreasing in j: R_R(D+j) is nondecreasing,
+and j-a is nondecreasing because a increases only every other step.
+Therefore the monotone-deque range maximum in adaptive_density_probe.py
+is correct. Finding one s that passes this entire b-range for each j is a
+stronger sufficient quantifier than allowing s to depend on b, and is valid.
+
+The supplied implementations use exact integer comparisons for both
+rational densities. Histogram index d+1 and prefix sums represent strict
+degree thresholds. Clamping negative degrees to -1 is harmless because all
+queried thresholds are positive. Prime-list cutoff completeness is asserted.
+The C++ certificate uses signed 128-bit intermediate products, with the
+input restricted to U<=2,000,000. These bounds are far below overflow.
+
+PART III Guarded finite prefix totient estimates
+============================================================
+
+MAIN RESULTS
+Write G_n(t)=(2/n)*#{v<=n: v odd and phi(v)/v<t}; normalization is by n/2,
+not ceil(n/2), so the bounds plug directly into the graph estimates.
+
+For EVERY integer n>=1,000,000 and EVERY real t in [1/3,3/4],
+ G_n(t) < (9/10)t-1/6-83/10000.                     (H)
+This interval includes the needed endpoint 20/27 and guards it through .75.
+
+For EVERY integer n>=2,000,000 and EVERY beta in [1/10,201/100],
+ G_n(sqrt((beta+3/100)/3)) < beta/3-33/2500.         (L)
+The remaining margin is .0132. In particular, before finite-prefix error,
+the proposed .02 low-rank margin succeeds, with room to spare.
+
+Both statements use only 16 states for the primes 3,5,7,11 and elementary
+first-/sixth-moment estimates. No Mertens theorem or Rosser–Schoenfeld bound
+is required. The exact checker uses <1 CPU-second and enumerates primes only
+through 2000. It does not enumerate graph subsets A.
+
+PROOF
+1. Constants, all checked with exact fractions
+Let lambda_p=-log(1-1/p), and let P={3,5,7,11}.
+ delta_actual=sum_{p>11}lambda_p/p < D:=47/2000=.0235,
+ C6=product_{odd p}(1+((p/(p-1))^6-1)/p)<11.
+For each odd prime p<=2000, the first 12 terms of
+lambda_p=sum_{h>=1}1/(h p^h) give a lower bound, with remainder at most
+1/[13 p^12(p-1)]. Sum the resulting upper bounds for lambda_p/p and add
+1/2000 for all omitted primes: lambda_p/p<=1/[p(p-1)], whose tail over
+all integers p>2000 telescopes to 1/2000. Subtracting the four small-prime
+lower bounds gives the displayed upper bound for delta_actual.
+For C6, multiply its Euler factors through p<=200. For p>200 the binomial
+expansion gives (p/(p-1))^6-1<=7/(p-1). Thus the omitted logarithmic tail
+is <=7/200 and the product tail is <=exp(7/200)<=200/193.
+Every finite sum and product is evaluated as an exact rational in the
+bundled checker. Verified upper values:
+ delta_actual<.023456772181318, C6<10.994755089901.
+
+2. Uniform sixth moment, with no error term
+For odd squarefree d, put c(d)=product_{p|d}((p/(p-1))^6-1), so
+ (v/phi(v))^6=sum_{d|v}c(d), with nonnegative coefficients.
+The number of odd multiples of d in [n] is at most n/d. Therefore
+ (2/n) sum_{v<=n,v odd}(v/phi(v))^6 <=2 sum_d c(d)/d=2C6<22,
+and Markov gives G_n(t)<22t^6, uniformly for EVERY n.
+
+3. The 16-state bound and its finite-prefix discrepancy
+For S subset P put
+ a_S=product_{p in S}(1-1/p),
+ q_S=product_{p in S}(1/p) product_{p in P\S}(1-1/p),
+ e_S=2^(3-|S|).
+Then sum q_S=1 and sum e_S=81/2.
+For any odd d, its odd-multiple count K_d(n) is floor(n/(2d)+1/2), so
+ |K_d(n)-n/(2d)|<=1/2.
+By four-prime inclusion-exclusion, a signature count K_S satisfies
+ |K_S-q_S*n/2|<=e_S.
+For every prime p>11, the count K_{S,p} with that signature and p|v satisfies
+ |K_{S,p}-q_S*n/(2p)|<=e_S.
+Consequently, for T(v)=sum_{p>11,p|v}lambda_p,
+ sum_{v<=n,v odd,signature S}T(v) <= q_S*(n/2)*D+e_S*L(n),
+ L(n)=sum_{11<p<=n}lambda_p.
+For n>=13 the elementary odd-integer comparison gives the sharp-enough bound
+ L(n)<=sum_{j=6}^{floor((n-1)/2)}1/(2j)
+      <=(1/2)log(floor((n-1)/2)/5)
+      <=(1/2)log(n/10).                            (1)
+No additive +.1 is necessary. Here lambda_p<=1/(p-1), and the harmonic-sum
+bound follows by integrating 1/x from 5 to floor((n-1)/2).
+
+If a_S<=t, use the signature count. Otherwise, Markov bounds that signature's
+contribution to G_n(t) by
+ min(q_S+2e_S/n,
+     (q_S*D+2e_S*L(n)/n)/log(a_S/t)).
+Use the rational lower bound r_S(t)=2(a_S-t)/(a_S+t)<=log(a_S/t), and set
+ B_*(t)=sum_S q_S * u_S(t),
+ u_S(t)=1                                    if a_S<=t,
+ u_S(t)=min(1,D*(a_S+t)/(2(a_S-t)))            if a_S>t.
+This function is nondecreasing.
+
+For the error comparison, if r_S<D the limiting summand is q_S and the
+signature-count error is <=2e_S/n. If r_S>=D, the extra Markov term is at
+most 2e_S*L(n)/(D*n). For the n at issue L's upper bound can be taken >=D.
+Summing proves
+ G_n(t)<=B_*(t)+E(n),
+ E(n)=(81/(2D))*log(n/10)/n
+     =(81000/47)*log(n/10)/n.                       (2)
+This comparison DOES NOT require an extra '+1' in E(n). Use the moment bound
+with B(t)=min(22t^6,B_*(t)) to get G_n(t)<=B(t)+E(n).
+
+4. Guarded high-branch certificate
+Divide [1/3,3/4] into 1000 cells of width 1/2400. On every cell [l,r], the
+exact-rational checker verifies
+ (9/10)l-1/6-B(r)>29/1000.
+The minimum actual cell slack is approximately .02905399178577378.
+By monotonicity, B(t)<.9t-1/6-.029 everywhere on the interval.
+For n>=10^6 the right side of (2) decreases with n. The exact rational check
+sum_{k=0}^{20}12^k/k!>10^5 proves log(10^5)<12. Thus
+ E(n)<=972000/47000000
+ (diagnostic approximation: 972000/47000000 is approximately .02068085106382979),
+ .029-E(n)>.0083,
+which proves (H).
+
+5. Low-rank endpoint certificate
+Divide [1/10,201/100] into 1910 beta-cells [l,r] of width 1/1000. For each
+right endpoint, bound sqrt((r+.03)/3) upward by a rational on the 10^-9 grid,
+using integer isqrt and an exact squared comparison. The checker verifies
+ l/3-B(upper_sqrt((r+.03)/3))>119/5000=.0238.
+The minimum actual cell slack is approximately .02389295162749755.
+By monotonicity, B(sqrt((beta+.03)/3))<beta/3-.0238 throughout the interval.
+For n>=2*10^6, the exact check sum_{k=0}^{20}(49/4)^k/k!>2*10^5 proves
+log(2*10^5)<49/4. Therefore
+ E(n)<=3969000/376000000
+ (diagnostic approximation: 3969000/376000000 is approximately .010555851063829787),
+ .0238-E(n)>.0132,
+which proves (L).
+
+PART IV Explicit analytic proof above the threshold
+============================================================
+
+Let rho(v)=phi(v)/v, H=ceil(n/2),
+ R_n(t)=#{odd v<=n:rho(v)<t}, G_n(t)=(2/n)R_n(t).
+The supplied CDF certificate establishes exactly:
+ (I) G_n(t)<22t^6 for every n and t>0;
+ (II) G_n(t)<0.9t-1/6-0.0083 for n>=1,000,000,
+      1/3<=t<=3/4;
+ (III) G_n(sqrt((beta+0.03)/3))<beta/3-0.0132 for
+       n>=2,000,000 and 0.1<=beta<=2.01.
+Input (I) follows from C6<11, expansion into nonnegative divisor weights,
+and the upper bound n/d for the number of odd multiples of odd d. In
+particular it has no additive finite-n error. Inputs (II),(III) already
+include every finite-prefix error; none should be added again below.
+
+For every n>1024 choose the least s with n<=4^s and use the first s odd
+prime divisibility coordinates. The adaptive-tail certificate establishes
+that a same-signature pair with both profiles >=t has common-neighbor
+density >=0.9t. Every pair, without a signature condition, has density
+>=t^2. Inclusion-exclusion gives common-neighbor loss <(3/2)sqrt(n).
+Moving the two coprime skeleton endpoints to the ends leaves at most
+h=2^s+1<2sqrt(n)+1 cross-signature gaps. These are the only graph-arithmetic
+lemmas used below.
+
+1. Exact integer accounting and uniform numerical bounds
+Fix n>=N=2,000,000. Write n=6m+r, 0<=r<=5. Let
+ q=floor(n/2), f=floor(n/2)+floor(n/3)-m,
+ M=f-q+1, b=#missing even integers,
+ beta=b/m, x=j/m for 1<=j<=m,
+ D=n-f+m=3m+(0,1,1,1,1,2)_r.
+Feasibility gives 0<=b<=H-M and beta<=2+1/m.
+Also q>=3m, H<=3m+3,
+ n/(2m)<3.000008, and 22H/m<66.001.
+
+Let delta=(3/2)sqrt(n), and epsilon=(delta+2)/m. The proven discrepancy
+bound for every odd endpoint pair is strictly below delta. Choose the
+least s with n<=4^s; its transition budget h=2^s+1 satisfies h<2sqrt(n)+1,
+and the adaptive tail factor is at least 9/10.
+Uniformly throughout n>=N,
+ epsilon<0.0065, h/m<0.0086.                         (1)
+To check these without relying on unrecorded decimals, m>=(n-5)/6, and the
+upper functions (9sqrt(n)+12)/(n-5), (12sqrt(n)+6)/(n-5) decrease for n>5.
+At N use sqrt(N)<1415; cross multiplication gives both bounds in (1).
+
+For t<=1, let G_n(t)=(2/n)R_n(t). The integer 1 is never counted in
+R_n(t), so 0<=G_n(t)<=1. Since n/(2m)<3.000008,
+ R_n(t)/m < 3G_n(t)+0.000008.                       (2)
+For the direct moment estimate we may use the slightly weaker convenient
+bound R_n(t)/m<66.001t^6.
+
+2. Why the chosen thresholds supply sufficient resources
+For a shared-s-signature pair with both endpoint profiles >=t, the common
+neighbor counts are at least
+ even pool: q(9/10)t-delta,
+ whole pool: n(9/10)t-delta.
+For an arbitrary pair, with no signature requirement, they are at least
+ q t^2-delta and n t^2-delta, respectively.
+
+For every rank j the even-pool target is b+j; the whole-pool target is D+j.
+These account for all missing evens, or all missing vertices and the entire
+odd skeleton, respectively.
+
+Retain the best M selected odds. At most max(0,R_n(t)-b) retained odds have
+profile <t. In a skeleton ordered by the full s-signature and with the two
+coprime endpoints moved to its ends, at most
+ 2 max(0,R_n(t)-b)+h
+successive gaps are exceptional. If the last expression is <j, and one of
+the common-neighbor targets holds, the rank-j Hall condition follows.
+For an unstructured, product-density bound one uses h=0, with the same
+fixed skeleton order. Hence the following rankwise cases are compatible.
+
+3. Large ranks: x>=0.02
+Choose
+ t=min((beta+x+epsilon)/2.7, (3+x+epsilon)/5.4).       (4)
+This t is positive and
+ t<4.0065/5.4<0.743.
+If the first branch in (4) is minimal, the even lower bound is at least
+ 2.7m t-delta=b+j+2.
+If the second is minimal, the whole lower bound is at least
+ 5.4m t-delta=3m+j+2>=D+j.
+Thus a required resource target always holds.
+
+3a. The high-profile branch t>=10/27
+The finite CDF lemma gives
+ G_n(t)<0.9t-1/6-0.0083
+because 1/3<=t<0.743<3/4 and n>=2,000,000.
+Using (2) and t<=(beta+x+epsilon)/2.7,
+ R_n(t)/m
+ <2.7t-1/2-0.0249+0.000008
+ <=beta+x+epsilon-0.5249+0.000008
+ <=beta+x/2-0.0249+epsilon+0.000008,
+since x<=1. Moreover
+ epsilon+h/(2m)+0.000008
+ <0.0065+0.0043+0.000008
+ =0.010808<0.0249.
+As x>h/m, this proves
+ 2 max(0,R_n(t)/m-beta)+h/m<x.
+The rank-j condition follows with strict inequality.
+
+3b. The low-profile branch t<10/27
+The second branch of (4) is >5/9, so the first branch must be minimal.
+Set y=beta+x+epsilon=2.7t; then 0.02<=y<1.
+From the direct finite moment bound and 22H/m<66.001,
+ R_n(t)/m <66.001(y/2.7)^6<0.171 y^6.               (5)
+The polynomial F(y)=0.342y^6-y+0.0151 is convex on [0.02,1], and both
+endpoint values are strictly negative. Thus
+ 0.342y^6+0.0086<y-0.0065<=y-epsilon=beta+x<=2beta+x.
+Together with x>=0.02>h/m, this and (5) imply the same strict rank-j
+condition as in 3a. The direct finite moment bound here has no additive error term.
+
+4. Small ranks with many missing evens: x<=0.02, beta>=0.1
+Set beta_0=min(beta,2) and
+ t=sqrt((beta_0+0.03)/3).
+The clipping handles n=6m+5, when b can equal 2m+1; then
+ 0<=m(beta-beta_0)<=1.
+Using the unstructured product bound, the common even-neighbor count is
+at least
+ q t^2-delta>=m(beta_0+0.03)-delta.
+This exceeds b+j: the difference is at least
+ 0.01m-delta-1 > 0.0035m+1 >0,
+using epsilon=(delta+2)/m<0.0065.
+
+By the direct low-rank finite CDF lemma and (2),
+ R_n(t)/m < beta_0-3(0.0132)+0.000008
+ =beta_0-0.039592<beta.
+Therefore R_n(t)<b. Every retained odd has profile >=t; no gap is
+exceptional and every connector list has at least j members. No signature
+transition budget is needed in this case.
+
+5. Universal common-even-neighbor bound
+For every odd pair u,v<=n, write w=omega(rad(uv)). Since its distinct odd
+prime factors are at least 3,5,...,2w+1,
+ rho(rad(uv))>=product_{i=1}^w 2i/(2i+1)
+              >=sqrt(3/(4w+3)).                    (6)
+The second inequality follows by induction: at step w,
+ [2w/(2w+1)]^2 >= (4w-1)/(4w+3),
+whose cross-multiplied numerators differ by exactly 1. Also
+ w<=2log(n)/log(3),
+so the common even-neighbor count is at least
+ ((n-1)/2)sqrt(3/(8log(n)/log(3)+3))-(3/2)sqrt(n).
+This quantity is >30sqrt(n) for every n>=N.
+
+For completeness, divide the first term by sqrt(n) and call it G(n).
+Its square is a positive constant times
+ (n-1)^2/[n(8log(n)/log(3)+3)],
+which is increasing for n>=3: the logarithmic derivative comparison is
+ (n+1)/(n-1)>[8/log(3)]/[8log(n)/log(3)+3].
+At N, log(N)<15, log(3)>1, and sqrt(N)<1500. Thus the square-root factor
+in G(N) is >1/7, and
+ G(N)>(N-1)/(14sqrt(N))>(N-1)/21000>31.5.
+Subtracting 1.5 proves the claim. The elementary logarithm inequalities
+follow from e>8/3 and e<3. This intentionally conservative bound is enough.
+
+6. Small ranks with few missing evens: x<=0.02, beta<0.1
+If b+j<=30sqrt(n), Section 5 shows that every odd pair has at least b+j
+common evens. Removing at most b missing evens leaves at least j resources
+for every gap, so the rank-j condition is automatic.
+
+Otherwise b+j>30sqrt(n), hence delta<(b+j)/20. Put z=beta+x<0.12 and
+ t=sqrt(1.05z/3).
+The unstructured common-even-neighbor bound is strictly greater than
+ 3m t^2-delta=1.05(b+j)-delta>b+j.
+The direct finite moment bound gives
+ R_n(t)/m<66.001(1.05z/3)^3<2.84z^3.                (7)
+If beta>=x, then beta>=z/2 and
+ 2.84z^3<z/2<=beta,
+since 5.68(0.12)^2<1. Thus no retained low-profile vertices remain.
+If beta<x, then z<2x and (7) gives
+ 2 max(0,R_n(t)/m-beta)<=2R_n(t)/m<45.44x^3<x,
+since x<=0.02 and 45.44(0.02)^2<1.
+In both cases fewer than j gaps have insufficient common-neighbor bounds.
+There is no signature-transition term because the product-density estimate
+is unstructured.
+
+7. Conclusion and exact dependency boundary
+Sections 3,4,6 cover every feasible b and every rank 1<=j<=m. The bounds
+hold for one fixed skeleton order: the adaptive full signature in Section 3,
+with the same ordering harmless in the unstructured cases. The two prescribed
+odd endpoints are coprime by the exact Ahlswede--Khachatrian theorem.
+Ordered Hall supplies every required odd cycle for every n>=2,000,000.
+
+PART V Exact finite bridge and completion
+============================================================
+
+For n<=5, the theorem has no target odd cycle length at least 3 and is
+vacuous. The supplied interval list interval_cover_6_2300.json contains
+71 adjacent intervals covering every integer from 6 to 2300. Each interval
+passes the exact criterion in Part I using the first four odd primes.
+The script check_interval_cover.py generates the cover. Independent
+verification recomputes the common-neighbor profiles by direct gcd counts;
+a separate C++ verifier recomputes them by exact inclusion–exclusion.
+
+The file adaptive_bridge_2301_2000000_output.txt contains 84 adjacent PASS
+intervals covering every integer from 2301 to 2,000,000. The integer-only
+program adaptive_bridge.cpp verifies the profile-only form of the same
+interval criterion, using g_s(z)=max(z^2,eta_s(U)z) from Part II. It checks
+all Hall ranks and all feasible missing-even counts through exact range
+maxima. No selected subset A is sampled or enumerated.
+
+A separately rebuilt source passes the same 84 intervals. A further
+independently written verifier uses a linear smallest-prime-factor totient
+sieve and segment-tree range maxima rather than the original sieve and
+monotone deque. It also passes all 84 intervals. The separate mathematical
+audit and checker sources are included in the bundle.
+
+REJECT lines in diagnostic logs refer to wider proposed intervals that
+failed a sufficient test and were split. Every interval in the final
+contiguous covers passes. Such rejected proposals are not counterexamples
+to the theorem and do not leave gaps in the cover.
+
+Combining these exact covers with Part IV proves the stated all-n theorem
+within this proof candidate. The overlap at n=2,000,000 is deliberate.
+No extrapolation from finite samples, no unspecified n0 and no unverified
+large finite range is used in this combination.
+
+Sources and provenance
+1. R. Ahlswede and L. H. Khachatrian, Sets of integers and quasi-integers
+   with pairwise common divisor, Acta Arithmetica 74 (1996), 141–153.
+   DOI: https://doi.org/10.4064/aa-74-2-141-153
+   https://matwbn.icm.edu.pl/ksiazki/aa/aa74/aa7424.pdf
+2. P. Erdős and G. N. Sárközy, On cycles in the coprime graph of integers,
+   Electronic Journal of Combinatorics 4(2) (1997), R8.
+   DOI: https://doi.org/10.37236/1323
+   https://www.combinatorics.org/ojs/index.php/eljc/article/download/v4i2r8/pdf/
+   Its Theorem 1 and following endpoint question concern sufficiently
+   large n. That theorem is historical context, not an input here.
+3. D. Della Pietra, Odd cycles at the sharp threshold in the coprime graph,
+   unrefereed public manuscript, publication commit
+   1f26276d7850fc9afe68e9d7edecf24aa7cc597d, 27 July 2026.
+   https://github.com/donalddellapietra/erdos-883-proof/blob/1f26276d7850fc9afe68e9d7edecf24aa7cc597d/paper/main.tex
+   Its main theorem has an existential n0 and assumes n>=n0. The present
+   proof adapts its architecture and does not claim that method as new.
+4. Current statement formalization of Erdős 883:
+   https://raw.githubusercontent.com/google-deepmind/formal-conjectures/main/FormalConjectures/ErdosProblems/883.lean
+   Part i quantifies every n. This statement source is not used as a proof.
+
+Reproduction and review boundary
+Read README.txt for exact reproduction commands, source versions, and the
+certificate inventory. Verify SHA256SUMS.txt before running anything, and
+run the checkers in a fresh copy since some regenerate their outputs.
+The certificate programs use only standard Python 3 and C++17 facilities
+(with the compiler's __int128 extension). No paid service, numerical
+optimizer, external theorem prover or downloaded executable is required.
+
+Independent AI-assisted checks found no gap in the assembled argument.
+That does not substitute for external mathematical review or formal
+verification. The manuscript remains labeled a proof candidate.
