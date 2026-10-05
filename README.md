@@ -1,65 +1,82 @@
-# 潘奕成 · Yicheng Pan / Zoah
+# Yicheng Pan
 
-**18 岁 · 安徽大学 · 世界模型公司 KineWorld 负责人**
+I'm Yicheng Pan, also known as **Zoah**: an 18-year-old student at **Anhui University** and the lead of **[KineWorld](https://kineworld.com)**, a research-stage world-model company in Hefei, China.
 
-GitHub: **[@zoahdev](https://github.com/zoahdev)** · Erdős Problems:
-**[yichengpan](https://www.erdosproblems.com/forum/user/yichengpan)**.
-两个账号均为潘奕成本人的公开主页。
+I work on formal mathematics, physical intelligence, and tools that make AI-assisted research easier to inspect and reproduce. My aim is to publish useful proofs, precise research questions, reusable verification artifacts, and practical developer tools.
 
-## Erdős #883: 第一问的全 n 证明
+**Student email:** [W326301002@stu.ahu.edu.cn](mailto:W326301002@stu.ahu.edu.cn)
 
-已完成第一问对所有自然数 n 的证明及 Lean 形式化。完整源码、论文和独立复验记录现已公开：
+**GitHub:** [@zoahdev](https://github.com/zoahdev) · **Erdos Problems:** [yichengpan](https://www.erdosproblems.com/forum/user/yichengpan)
 
-- **[证明仓库](https://github.com/zoahdev/erdos883-first-question)** · [论文 PDF](https://github.com/zoahdev/erdos883-first-question/blob/main/paper/Erdos883_Lean_Aligned_Manuscript_20261005.pdf)
-- **6,831 个本地模块独立重编译通过**，最终定理与规范的第一问完整表述一致。
-- 最终公理仅为 `propext`、`Classical.choice`、`Quot.sound`；[核验记录](https://github.com/zoahdev/erdos883-first-question/blob/main/audit/KERNEL_RECHECK.json)。
-- 在 **Donald Della Pietra 的充分大 n 结果及核心构造**基础上补齐有限范围，覆盖全部 n；第二问不计入本次贡献。
+These are my public accounts. My university affiliation identifies my student status; it does not imply institutional endorsement of these projects.
 
-AI 工具实质参与了证明开发、形式化和核验。公开材料明确记录前人贡献与复现条件；不声称历史首创、专家背书或期刊录用。
+## Featured mathematics: Erdos #883, first question for every n
 
-## World models and physical intelligence
-I'm building [KineWorld](https://github.com/kineworld), a research-stage world-model company.
+**[Complete all-n proof and Lean formalization](https://github.com/zoahdev/erdos883-first-question)**
 
-My current focus is **action-conditioned prediction, compact latent dynamics, and reproducible evaluation for physical intelligence**. I also build the agent tooling and security infrastructure that make experiments easier to inspect and repeat.
+Building on **Donald Della Pietra's sufficiently-large-n result and core construction**, this work completes the finite range and proves the canonical first-question statement for every natural number n. It concerns the first question only.
 
-勘境 / KineJing is our world-model integration and research project. Start with the code, then follow the model cards and experiment records.
+For every A contained in {1, ..., n} with |A| > floor(n/2) + floor(n/3) - floor(n/6), the induced coprime graph on A contains a genuine cycle of every odd length l with 3 <= l <= floor(n/3) + 1.
 
-## Start here
+The final theorem is `Erdos883Verified.erdos883_firstQuestion`. A separate source rebuild compiled **all 6,831 local Lean modules** afresh with the pinned dependencies. The canonical statement check passed; the theorem's axioms are only `propext`, `Classical.choice`, and `Quot.sound`.
 
-| Project | What to explore |
+[Manuscript](https://github.com/zoahdev/erdos883-first-question/blob/main/paper/Erdos883_Lean_Aligned_Manuscript_20261005.pdf) · [Kernel audit](https://github.com/zoahdev/erdos883-first-question/blob/main/audit/KERNEL_RECHECK.json) · [Reproduction errata](https://github.com/zoahdev/erdos883-first-question/blob/main/REPRODUCTION_ERRATA.txt) · [Original release](https://github.com/zoahdev/erdos883-first-question/releases/tag/v1.0.0)
+
+The contribution is an **all-n completion**, with explicit credit to the preceding asymptotic work. The [earlier forum claim and discussion](https://www.erdosproblems.com/forum/thread/883/proof-claims) matter for interpreting priority. I make no claim of historical first priority, expert endorsement, or journal acceptance. AI tools substantially assisted proof development, formalization, and the rebuild audit; kernel checking is separate from external human peer review.
+
+## KineWorld
+
+**[KineWorld](https://github.com/kineworld)** studies action-conditioned world models, compact predictive representations, and evaluation for planning and control. I currently lead it as a single-maintainer, part-time research organization.
+
+Our work centers on inspectable experiments, clear baselines, and recorded failure cases. Current evidence is internal and research-stage; independent reproduction is welcome.
+
+[Company website](https://kineworld.com) · [Organization](https://github.com/kineworld) · [Contribution guide](https://github.com/kineworld/.github/blob/main/CONTRIBUTING.md)
+
+### KineJing
+
+**[KineJing](https://github.com/kineworld/KineJing)** is our world-model integration and research project. It brings together a CPU motion baseline, upstream model adapters, and a trained three-view action-conditioned feature predictor using frozen DINOv2 features.
+
+The trained predictor outputs future visual features and has no RGB decoder. Its [model card](https://github.com/kineworld/KineJing/blob/main/docs/DYNAMICS_MODEL_CARD.md) records the training setup, baselines, artifact hashes, and limitations. Adapter and integration tests establish software behavior; model-quality claims require the corresponding evaluation evidence.
+
+[CPU quick start](https://github.com/kineworld/KineJing#quickstart) · [Experiment records](https://github.com/kineworld/KineJing/blob/main/evidence/README.md) · [Project website](https://kinejing.com)
+
+The public repository includes the CPU demo, training code, and evaluation records. The trained predictor checkpoint is currently in a private company release; reproducing it requires checkpoint access and separately obtained upstream data and weights.
+
+| Project | Focus |
 | --- | --- |
-| **[KineJing · 勘境](https://github.com/kineworld/KineJing)** | CPU motion baseline, model adapters, and a trained three-view action-conditioned feature predictor |
-| **[Kine-JEPA](https://github.com/kineworld/kine-jepa)** | Compact latent-model prototypes, action-conditioned rollout, and planning interfaces |
-| **[KINE-Bench](https://github.com/kineworld/kine-bench)** | Evaluation protocols, representation diagnostics, baselines, and recorded negative findings |
-| **[KINE-DataPipe](https://github.com/kineworld/kine-datapipe)** | Video preprocessing, motion filtering, event-candidate mining, and pair construction |
+| [Kine-JEPA](https://github.com/kineworld/kine-jepa) | Compact latent dynamics, action-conditioned rollout, and planning interfaces |
+| [KINE-Bench](https://github.com/kineworld/kine-bench) | Evaluation protocols, representation diagnostics, and baselines |
+| [KINE-DataPipe](https://github.com/kineworld/kine-datapipe) | Video preprocessing, motion filtering, and training-pair construction |
 
-- **Try the CPU workflow:** [KineJing quick start](https://github.com/kineworld/KineJing#quickstart)
-- **Inspect the trained predictor:** [model card](https://github.com/kineworld/KineJing/blob/main/docs/DYNAMICS_MODEL_CARD.md)
-- **Check the experiments:** [evidence records](https://github.com/kineworld/KineJing/blob/main/evidence/README.md)
-- **Understand the organization:** [KineWorld](https://github.com/kineworld) · [website](https://kineworld.com)
+## Other public research
 
-## Research boundaries
+These projects have different completion levels. The descriptions below reflect the scope of their public materials; finite computations support only the checks they actually perform.
 
-Current results are internal and research-stage. The trained KineJing predictor outputs future visual features; it has no RGB decoder. Its model card records the data split, baselines, weight hashes, and limitations.
+| Research | Materials and current scope |
+| --- | --- |
+| String-amplitude positivity | [Finite Veneziano products](research/finite-veneziano-positivity/README.md) and [follow-up research](https://github.com/zoahdev/string-amplitude-positivity): AI-assisted preprints on specified four-point, tree-level amplitude families, with exact symbolic certificates. These do not establish a physical string theory or a general ultraviolet completion. |
+| Erdos #885: square sums | [Construction archive](https://github.com/zoahdev/erdos885-square-sum): explicit 5-by-4 square-sum specialization, genus-13 reduction, and a genus-three lift-curve study. Partial constructions and recomputable certificates; the k = 5 case remains unresolved. |
+| Erdos #1013: structural certificates | [Certificate archive](https://github.com/zoahdev/erdos1013-structural-certificates): partial work on triangle-free six-chromatic graphs of order 34. Coverage remains incomplete, and catalogue assumptions are explicit; this does not resolve #1013. |
+| Mutually unbiased bases in dimension six | [Exact reductions and certificates](https://github.com/zoahdev/physics-mub6-certificates): moment identities and counterexamples to selected relaxations. The existence question for four mutually unbiased bases in dimension six remains open. |
+| Bosonic purity and extensions | [Research draft](https://github.com/zoahdev/physics-bosonic-purity): proposed balanced-projector classifications and conditional purity bounds. Finite symbolic checks do not prove the proposed universal classification. |
+| Lieb-Oxford and Coulomb inequalities | [Research drafts](https://github.com/zoahdev/chemistry-lieb-oxford): conditional low-particle gap and moment-stability arguments, with reproducible finite checks. Analytic hypotheses and proof obligations remain explicit. |
+| Riemann-hypothesis research | [Spectral and certificate laboratory](https://github.com/zoahdev/riemann-research-lab): local matrix inequalities, moment obstructions, and finite interval-arithmetic Weil-kernel probes. This is not a proof or disproof of the Riemann hypothesis. |
+| BFSS threshold analysis | [Unfinished research](https://github.com/zoahdev/bfss-threshold-research): conditional reductions and symbolic free-channel diagnostics. The required physical channel estimates and nonperturbative bounds remain unproved. |
+| SPARC data provenance | [Provenance audit](https://github.com/zoahdev/astronomy-sparc-provenance): conditional sample-alignment diagnostics with pinned inputs. It does not establish the historical selection procedure or a new result about gravity. |
+| PeerDAS custody | [Conditional certificates](https://github.com/zoahdev/peerdas-custody-certificates): deterministic incidence-instance witnesses and protocol-assumption audits, tested on synthetic instances. These are not production Ethereum security estimates. |
+| World-model evaluation | [Evaluation research](https://github.com/zoahdev/kineworld): exploratory Push-T checkpoint studies, confound audits, and reusable episode-provenance checks. These have no claimed external replication or official benchmark status. |
+| Window certification for learned models | [Scoped technical report](https://github.com/zoahdev/kineworld/blob/26b264b0057f4f2537fbc1a16125178eb1c92358/verification/releases/KW-WORLD-MODEL-AUDITS-2026-10/prequential/REPORT.md): sequential-inference arguments under explicit model-class assumptions, counterexamples to overbroad guarantees, and bounded synthetic checks. No real-world control improvement is established. |
 
-The trained predictor checkpoint is currently retained in a private company release. The public repository provides the CPU demo, training code, and evaluation records; reproducing the trained predictor requires checkpoint access and separately obtained upstream data and weights.
+The [earlier #883 manuscript archive](research/erdos883-all-n/README.md) is retained alongside the final proof repository.
 
-Public demos, software tests, and model-quality evaluations answer different questions. I keep those distinctions visible and welcome independent reproduction, including failed attempts.
+## Agent infrastructure and DSH plugins
 
-## Public research notes
+I build community tools for **DeepSeek Harness (DSH)**: [Plugin Doctor](https://github.com/zoahdev/dsh-plugin-doctor) for plugin and profile checks, [Poison Guard](https://github.com/zoahdev/dsh-poison-guard) for static supply-chain risk inspection, and [Replay](https://github.com/zoahdev/dsh-replay) for session timelines and comparisons. The [ecosystem guide](https://github.com/zoahdev/dsh-ecosystem) connects the plugin, documentation, and developer-tool projects. Static scanners provide diagnostic evidence, not a guarantee that a plugin is safe.
 
-- [Erdős #883 first-question all-n proof and Lean formalization](https://github.com/zoahdev/erdos883-first-question): the full canonical statement with an independent rebuild of all 6,831 local modules. [Earlier manuscript archive](research/erdos883-all-n/README.md).
-- [Finite Veneziano-product positivity](research/finite-veneziano-positivity/README.md): an AI-assisted preprint and exact verification package for a specific four-point, tree-level amplitude family
-- [World-model window certification](https://github.com/zoahdev/kineworld/blob/26b264b0057f4f2537fbc1a16125178eb1c92358/verification/releases/KW-WORLD-MODEL-AUDITS-2026-10/prequential/REPORT.md): a scoped technical report with explicit model-class assumptions and reproducible synthetic checks
+Related work includes [KineGrant Protocol](https://github.com/zoahdev/kinegrant-protocol), an authorization and receipt protocol for physical AI, and [Axiomatter LabOps](https://github.com/zoahdev/axiomatter-labops), an auditable R&D workflow prototype using illustrative demo data. LabOps is an engineering prototype, not a validated scientific discovery system.
 
-These are public research materials without external peer review. Their scope, prior work, and substantial AI assistance are disclosed in the linked reports.
+## Research practice and collaboration
 
-## Earlier work
+AI assistance is substantial across my research and software work. The linked projects disclose their assumptions, sources, authorship, and verification boundaries. A Lean kernel replay, an exact finite certificate, a numerical experiment, and an unfinished analytic argument provide different kinds of evidence. External peer review and novelty require separate assessment.
 
-My agent and security work includes [KineGrant Protocol](https://github.com/zoahdev/kinegrant-protocol), [Developer Intelligence](https://github.com/zoahdev/dsh-github-intelligence), [Agent Plugin Doctor](https://github.com/zoahdev/dsh-plugin-doctor), and [Agent Replay](https://github.com/zoahdev/dsh-replay).
-
-These projects cover capability-based authorization, developer tools, plugin validation, and agent observability.
-
-## Collaborate
-
-For world-model research, useful starting points are a reproducible failure case, a baseline comparison, or a clearly scoped experiment. See [KineWorld's contribution guide](https://github.com/kineworld/.github/blob/main/CONTRIBUTING.md) for evidence requirements and how to contribute.
+I welcome precise corrections, failed reproduction reports, and collaboration on clearly scoped questions. For research correspondence, contact [W326301002@stu.ahu.edu.cn](mailto:W326301002@stu.ahu.edu.cn).
