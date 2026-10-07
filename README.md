@@ -1,5 +1,12 @@
 # Yicheng Pan
 
+<!-- OPENAI-MATH-COMMUNITY-BEGIN -->
+> **[openai/math](https://github.com/openai/math)** — Community catalogue tooling and Chinese reading guide  
+> [My contribution materials](https://github.com/zoahdev/math/blob/docs/chinese-reading-guide/COMMUNITY_CONTRIBUTIONS.md) · [Upstream submission discussion](https://github.com/openai/math/commit/adc7f1241b42e322a6451854ab7e4b4c146bf78a#commitcomment-203824333)  
+> Prepared independently; upstream acceptance is pending.
+<!-- OPENAI-MATH-COMMUNITY-END -->
+
+
 I'm Yicheng Pan, also known as **Zoah**: an 18-year-old student at **Anhui University** and the lead of **[KineWorld](https://kineworld.com)**, a research-stage world-model company in Hefei, China.
 
 I work on formal mathematics, physical intelligence, and tools that make AI-assisted research easier to inspect and reproduce. My aim is to publish useful proofs, precise research questions, reusable verification artifacts, and practical developer tools.
