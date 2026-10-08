@@ -1,4 +1,4 @@
-# Yicheng Pan
+# Yicheng Pan · 潘奕成 · zoahdev
 
 
 I'm Yicheng Pan, also known as **Zoah**: an 18-year-old student at **Anhui University** and the lead of **[KineWorld](https://kineworld.com)**, a research-stage world-model company in Hefei, China.
@@ -11,7 +11,9 @@ I work on formal mathematics, physical intelligence, and tools that make AI-assi
 
 These are my public accounts. My university affiliation identifies my student status; it does not imply institutional endorsement of these projects.
 
-## Featured mathematics: Erdos #883, first question for every n
+## Featured mathematics: Erdős Problem 883 — Yicheng Pan's first-question all-n contribution
+
+[English / 中文: 潘奕成（zoahdev）与埃尔德什第 883 题第一问](https://zoahdev.github.io/erdos-883/)
 
 **[Complete all-n proof and Lean formalization](https://github.com/zoahdev/erdos883-first-question)**
 
